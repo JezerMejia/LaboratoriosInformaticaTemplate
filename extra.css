@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  } 
+/*wtf que le hicieron a los containers*/
+  .side-left, .side-right {
+    flex-basis: 100%;
+    width: 150%;
+    text-align: center;
+    /* margin: 20px; */
+  }
+ 
+@media screen and (max-width: 768px) { 
+    .container{
+    justify-content: space-between ;
+    }
+    
+    .side-left {
+        flex-basis: calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        text-align: left;
+    }
+
+    .side-right {
+        flex-basis: calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        text-align: right;
+    }
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    /* border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: #0069d9;
+}
+
+.passLoss {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #115DFC;
+    text-align: right;
+    text-decoration: none;
+}
+
+.createAccount {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.createAccount a {
+    color: #115DFC;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+} 
+
+
+  
