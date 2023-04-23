@@ -1,184 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <link rel="stylesheet" href="/solicitudes.css" />
-    <script
-      src="https://kit.fontawesome.com/a68fa4bab1.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Laboratorios de Informática</title>
-  </head>
-  <body>
-      <div class="wrapper">
-        <nav
-          class="navbar sidebar bg-institucional flex-column flex-nowrap align-items-start align-items-sm-center justify-content-start"
-        >
-          <div
-            class="d-flex flex-row justify-content-between justify-content-sm-center w-100"
-          >
-            <div class="brand">
-              <img src="/assets/UCA-Logo.svg" alt="" />
-            </div>
-            <button
-              id="sidebar-inner-toggler"
-              class="btn btn-light d-block d-sm-none"
-              type="button"
-              data-toggle="collapse"
-              data-target="#sidebar-content"
-              aria-controls="sidebar-content"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i class="fa-solid fa-bars fa-xl"></i>
-            </button>
-          </div>
 
-          <button id="sidebar-toggler" class="d-none d-sm-block">
-            <i class="fa-solid fa-caret-right fa-xl"></i>
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="/solicitudes.css" />
+  <script src="https://kit.fontawesome.com/a68fa4bab1.js" crossorigin="anonymous"></script>
 
-          <div class="collapse navbar-collapse w-100" id="sidebar-content">
-            <div
-              class="nav-container d-flex flex-column w-100 h-100 justify-content-start justify-content-sm-between"
-            >
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" href="/">
-                    <i class="fa-solid fa-table-cells-large fa-lg"></i>
-                    Dashboard
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/solicitudes">
-                    <i class="fa-solid fa-inbox fa-lg"></i>
-                    Solicitudes
-                  </a>
-                </li>
-                <hr />
-                <li class="nav-item">
-                  <a class="nav-link" href="/laboratorios">
-                    <i class="fa-solid fa-desktop fa-lg"></i>
-                    Laboratorios
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/usuarios">
-                    <i class="fa-solid fa-user fa-lg"></i>
-                    Usuarios
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/informes">
-                    <i class="fa-solid fa-file-lines fa-lg"></i>
-                    Informes
-                  </a>
-                </li>
-              </ul>
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link" href="/ajustes">
-                    <i class="fa-solid fa-gear fa-lg"></i>
-                    Ajustes
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link account-link" href="/cuenta">
-                    <img
-                      src="/assets/chad.png"
-                      class="account-img"
-                      alt="Chad"
-                    />
-                    <div class="account-details">
-                      <span class="account-name">Yamil Guzmán</span>
-                      <span class="account-role">Coordinador</span>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+  <!--SearchBar links-->
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
 
-        <main class="container p-4">
-          <button class="add">Añadir solicitud</button>
-          <input
-            type="text"
-            id="myInput"
-            class="form-control mb-3"
-            placeholder="Search..."
-          />
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Estudiante</th>
-                <th scope="col">Laboratorio</th>
-                <th scope="col">Computadora</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Hora Inicio</th>
-                <th scope="col">Hora Fin</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Juan Perez</td>
-                <td>LAB B</td>
-                <td>4B</td>
-                <td>2023-03-20</td>
-                <td>3:30 PM</td>
-                <td>5:00 PM</td>
-              </tr>
-              <!---->
-              <tr>
-                <th scope="row">2</th>
-                <td>Esteman</td>
-                <td>LAB B</td>
-                <td>4B</td>
-                <td>2023-03-20</td>
-                <td>3:50 PM</td>
-                <td>4:30 PM</td>
-              </tr>
-              <!---->
-              <tr>
-                <th scope="row">3</th>
-                <td>Residente</td>
-                <td>LAB A</td>
-                <td>4D</td>
-                <td>2023-03-20</td>
-                <td>4:00 PM</td>
-                <td>5:00 PM</td>
-              </tr>
-            </tbody>
-          </table>
-        </main>
+  <!-- Include DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Include DataTables JavaScript -->
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+  <title>Laboratorios de Informática</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav
+      class="navbar sidebar bg-institucional flex-column flex-nowrap align-items-start align-items-sm-center justify-content-start">
+      <div class="d-flex flex-row justify-content-between justify-content-sm-center w-100">
+        <div class="brand">
+          <img src="/assets/UCA-Logo.svg" alt="" />
+        </div>
+        <button id="sidebar-inner-toggler" class="btn btn-light d-block d-sm-none" type="button" data-toggle="collapse"
+          data-target="#sidebar-content" aria-controls="sidebar-content" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars fa-xl"></i>
+        </button>
       </div>
 
-      <script>
-        const sidebarToggler = document.querySelector("#sidebar-toggler");
-        sidebarToggler.addEventListener("click", () => {
-          const sidebar = document.querySelector(".sidebar");
-          sidebar.classList.toggle("active");
+      <button id="sidebar-toggler" class="d-none d-sm-block">
+        <i class="fa-solid fa-caret-right fa-xl"></i>
+      </button>
+
+      <div class="collapse navbar-collapse w-100" id="sidebar-content">
+        <div class="nav-container d-flex flex-column w-100 h-100 justify-content-start justify-content-sm-between">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">
+                <i class="fa-solid fa-table-cells-large fa-lg"></i>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/solicitudes">
+                <i class="fa-solid fa-inbox fa-lg"></i>
+                Solicitudes
+              </a>
+            </li>
+            <hr />
+            <li class="nav-item">
+              <a class="nav-link" href="/laboratorios">
+                <i class="fa-solid fa-desktop fa-lg"></i>
+                Laboratorios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/usuarios">
+                <i class="fa-solid fa-user fa-lg"></i>
+                Usuarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/informes">
+                <i class="fa-solid fa-file-lines fa-lg"></i>
+                Informes
+              </a>
+            </li>
+          </ul>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/ajustes">
+                <i class="fa-solid fa-gear fa-lg"></i>
+                Ajustes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link account-link" href="/cuenta">
+                <img src="/assets/chad.png" class="account-img" alt="Chad" />
+                <div class="account-details">
+                  <span class="account-name">Yamil Guzmán</span>
+                  <span class="account-role">Coordinador</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container p-4">
+      <div class="nav-top">
+        <div class="nav-item">
+          <button class="all" data-filter="all">Todo</button>
+          <button class="accept" data-filter="Esteman">Aceptados</button>
+        </div>
+        <div class="nav-item">
+          <button class="add">
+            <i class="fa-solid fa-circle-plus"></i> Añadir solicitud
+          </button>
+          <input type="text" id="myInput" class="form-control mb-3" placeholder="Search..." />
+        </div>
+      </div>
+      <table id="dtTable" class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Estudiante</th>
+            <th scope="col">Laboratorio</th>
+            <th scope="col">Computadora</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora Inicio</th>
+            <th scope="col">Hora Fin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Juan Perez</td>
+            <td>LAB B</td>
+            <td>4B</td>
+            <td>2023-03-20</td>
+            <td>3:30 PM</td>
+            <td>5:00 PM</td>
+          </tr>
+          <!---->
+          <tr data-filter-item="Esteman">
+            <th scope="row">2</th>
+            <td>Esteman</td>
+            <td>LAB B</td>
+            <td>4B</td>
+            <td>2023-03-20</td>
+            <td>3:50 PM</td>
+            <td>4:30 PM</td>
+          </tr>
+          <!---->
+          <tr>
+            <th scope="row">3</th>
+            <td>Residente</td>
+            <td>LAB A</td>
+            <td>4D</td>
+            <td>2023-03-20</td>
+            <td>4:00 PM</td>
+            <td>5:00 PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#dtTable tbody tr").each(function(index) {
+          var row = $(this);
+          var text = row.text().toLowerCase();
+          if (text.indexOf(value) !== -1) {
+            row.show();
+          } else {
+            row.hide();
+          }
         });
-      </script>
-  </body>
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('button[data-filter]').on('click', function () {
+        var filter = $(this).data('filter');
+        $('tbody tr').each(function () {
+          var item = $(this).data('filter-item');
+          if (filter === 'all' || filter === item) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      });
+    });
+  </script>
+
+  <script>
+    const sidebarToggler = document.querySelector("#sidebar-toggler");
+    sidebarToggler.addEventListener("click", () => {
+      const sidebar = document.querySelector(".sidebar");
+      sidebar.classList.toggle("active");
+    });
+  </script>
+</body>
+
 </html>

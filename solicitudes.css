@@ -1,3 +1,5 @@
+/*SideBar CSS*/
+
 *{
     margin: 0;
     padding: 0;
@@ -137,4 +139,52 @@ html, body {
         width: 380px;
         margin-left: 0px;
     }
+}
+
+/*REST CSS*/
+
+.add{
+    background-color: #105dfb;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    height: 35px;
+}
+
+.all{
+    background-color: transparent;
+    color: #3B3A3D;
+    border-style: none;
+    width: 100px;
+    height: 35px;
+}
+
+.accept{
+    background-color: transparent;
+    color: #3B3A3D;
+    border-style: none;
+    width: 100px;
+    height: 35px;
+}
+
+.nav-top {
+    margin: auto auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-top .nav-item{
+    gap: 1rem;
+    display: flex;
+}
+
+.all:hover{
+    background-color: #3b3a3d21;
+    font-weight: bold;
+}
+
+.accept:hover{
+    background-color: #3b3a3d21;
+    font-weight: bold;
 }
