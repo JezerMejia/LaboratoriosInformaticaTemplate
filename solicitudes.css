@@ -1,4 +1,7 @@
-/* SIDEBAR */
+*{
+    margin: 0;
+    padding: 0;
+}
 
 :root {
     font-family: 'Inter', sans-serif;
@@ -35,7 +38,8 @@ html, body {
     min-height: fit-content;
     box-sizing: border-box;
     gap: 2em;
-    padding: 2em;
+    padding: 1em;
+    transition: 0.3s margin-left;
 }
 .sidebar.active {
     margin-left: 0px;
@@ -65,6 +69,9 @@ html, body {
 .sidebar.active #sidebar-toggler {
     right: -2.5em;
 }
+.sidebar.active #sidebar-toggler > i{
+    transform: rotate(0deg);
+}
 #sidebar-toggler {
     position: absolute;
     right: -1.25em;
@@ -77,6 +84,10 @@ html, body {
     width: 2.5em;
     height: 2.5em;
     transition: 0.3s right;
+}
+#sidebar-toggler > i {
+    transition: 0.2s transform;
+    transform: rotate(180deg);
 }
 
 .account-link {
@@ -109,6 +120,7 @@ html, body {
     .sidebar {
         width: 290px;
         margin-left: 0px;
+        padding: 2em;
     }
     .sidebar.active {
         margin-left: -290px;
@@ -126,5 +138,3 @@ html, body {
         margin-left: 0px;
     }
 }
-
-/* TABLE */
