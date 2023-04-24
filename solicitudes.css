@@ -188,3 +188,14 @@ html, body {
     background-color: #3b3a3d21;
     font-weight: bold;
 }
+
+/*MODAL*/
+
+.Select{
+    display: flex;
+    gap: 1rem;
+}
+
+#datepicker{
+    width: fit-content;
+}
