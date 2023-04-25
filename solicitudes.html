@@ -34,15 +34,16 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
   </script>
-  
+
   <!--Timepicker-->
-    <!-- Tempus Dominus CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Tempus Dominus CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
 
   <title>Laboratorios de Informática</title>
 </head>
@@ -234,9 +235,9 @@
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
                     </span>
                   </div>
-  
+
                   <span>:</span>
-    
+
                   <div class="last-picker">
                     <span class="up-arrow-l">
                       <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
@@ -248,11 +249,11 @@
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
                     </span>
                   </div>
-                  
+
                   <button class="btn-time-picker-inicio">AM</button>
-                  
+
                 </div>
-                
+
                 <div class="timePicker-final">
 
                   <div class="first-picker">
@@ -266,9 +267,9 @@
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
                     </span>
                   </div>
-  
+
                   <span>:</span>
-    
+
                   <div class="last-picker">
                     <span class="up-arrow-f-l">
                       <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
@@ -280,11 +281,11 @@
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
                     </span>
                   </div>
-                  
+
                   <button class="btn-time-picker-final">AM</button>
                 </div>
               </div>
-              
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -330,153 +331,160 @@
     });
   </script>
 
-<script>
-  $(function () {
-    $('#datepicker').datepicker({
-      autoclose: true,
-      format: 'yyyy-mm-dd',
-      todayHighlight: true,
-      orientation: "bottom auto"
+  <script>
+    $(function () {
+      $('#datepicker').datepicker({
+        autoclose: true,
+        format: 'yyyy-mm-dd',
+        todayHighlight: true,
+        orientation: "bottom auto"
+      });
     });
-  });
-</script>
+  </script>
 
-<script>
-  $(function () {
-  $('#timepicker').datetimepicker({
-    format: 'LT'
-  });
-});
-</script>
+  <script>
+    $(function () {
+      $('#timepicker').datetimepicker({
+        format: 'LT'
+      });
+    });
+  </script>
 
-<!--TimePicker-inicio-->
+  <!--TimePicker-inicio-->
 
-<script>
-  const upButtonI = document.querySelector('.up-arrow');
-  const downButtonI = document.querySelector('.down-arrow');
-  const quantityInputI = document.querySelector('#quantity');
-  const amPmButton = document.querySelector('.btn-time-picker-inicio');
-  let amPmState = 'AM';
+  <script>
+    const upButtonI = document.querySelector('.up-arrow');
+    const downButtonI = document.querySelector('.down-arrow');
+    const quantityInputI = document.querySelector('#quantity');
+    const amPmButton = document.querySelector('.btn-time-picker-inicio');
+    let amPmState = 'AM';
 
-  // Agrega un evento de clic a los botones de incremento y decremento
-  upButtonI.addEventListener('click', () => {
-    quantityInputI.value = (parseInt(quantityInputI.value) % 12) + 1;
+    // Agrega un evento de clic a los botones de incremento y decremento
+    upButtonI.addEventListener('click', () => {
+      quantityInputI.value = (parseInt(quantityInputI.value) % 12) + 1;
 
-    if (parseInt(quantityInputI.value) === 12) {
-      amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
-      amPmButton.innerText = amPmState;
-    }
+      if (parseInt(quantityInputI.value) === 12) {
+        amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
+        amPmButton.innerText = amPmState;
+      }
 
-  });
-  downButtonI.addEventListener('click', () => {
-    // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
-    if (parseInt(quantityInputI.value) > 0) {
-      quantityInputI.value = (parseInt(quantityInputI.value) - 1 + 13) % 13;
-    } else {
-      quantityInputI.value = 12;
-    }
+    });
+    downButtonI.addEventListener('click', () => {
+      // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
+      if (parseInt(quantityInputI.value) > 0) {
+        quantityInputI.value = (parseInt(quantityInputI.value) - 1 + 13) % 13;
+      } else {
+        quantityInputI.value = 12;
+      }
 
-    if (quantityInputI.value === '12') {
-      amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
-      amPmButton.innerText = amPmState;
-    }
-  });
-</script>
+      if (quantityInputI.value === '12') {
+        amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
+        amPmButton.innerText = amPmState;
+      }
+    });
+  </script>
 
-<script>
-  // Encuentra los elementos span
-  const upButton = document.querySelector('.up-arrow-l');
-  const downButton = document.querySelector('.down-arrow-l');
-  // Encuentra el input
-  const quantityInput = document.querySelector('#quantity-l');
+  <script>
+    const upButton = document.querySelector('.up-arrow-l');
+    const downButton = document.querySelector('.down-arrow-l');
+    const quantityInput = document.querySelector('#quantity-l');
+    const quantityInput3 = document.querySelector('#quantity');
 
-  // Agrega un evento de clic a los botones de incremento y decremento
-  upButton.addEventListener('click', () => {
-    // Incrementa la cantidad en 15 y reinicia en 0 si es mayor a 59
-    if (parseInt(quantityInput.value) + 15 > 59) {
-      quantityInput.value = 0;
-    } else {
-      quantityInput.value = (parseInt(quantityInput.value) + 15) % 60;
-    }
-  });
-  downButton.addEventListener('click', () => {
-    // Decrementa la cantidad en 15 y reinicia en 45 si es menor a 0
-    if (parseInt(quantityInput.value) - 15 < 0) {
-      quantityInput.value = 60 - Math.abs(parseInt(quantityInput.value) - 15);
-    } else {
-      quantityInput.value = (parseInt(quantityInput.value) - 15) % 60;
-    }
-  });
-</script>
+    upButton.addEventListener('click', () => {
+      if (parseInt(quantityInput.value) + 15 > 59) {
+        quantityInput.value = 0;
+      } else {
+        quantityInput.value = (parseInt(quantityInput.value) + 15) % 60;
+      }
+      if (quantityInput.value === '0') {
+        quantityInput3.value = (parseInt(quantityInput3.value) % 12) + 1;
+      }
+    });
+    downButton.addEventListener('click', () => {
+      if (parseInt(quantityInput.value) - 15 < 0) {
+        quantityInput.value = 60 - Math.abs(parseInt(quantityInput.value) - 15);
+      } else {
+        quantityInput.value = (parseInt(quantityInput.value) - 15) % 60;
+      }
+      if (quantityInput.value === '45') {
+        quantityInput3.value = (parseInt(quantityInput3.value) - 2 + 12) % 12 + 1;
+      }
 
-<!--TimePicker 2-->
+    });
+  </script>
 
-<script>
-  const upButtonI2 = document.querySelector('.up-arrow-f');
-  const downButtonI2 = document.querySelector('.down-arrow-f');
-  const quantityInputI2 = document.querySelector('#quantity-f');
-  const amPmButton2 = document.querySelector('.btn-time-picker-final');
-  let amPmState2 = 'AM';
+  <!--TimePicker 2-->
 
-  // Agrega un evento de clic a los botones de incremento y decremento
-  upButtonI2.addEventListener('click', () => {
-    quantityInputI2.value = (parseInt(quantityInputI2.value) % 12) + 1;
+  <script>
+    const upButtonI2 = document.querySelector('.up-arrow-f');
+    const downButtonI2 = document.querySelector('.down-arrow-f');
+    const quantityInputI2 = document.querySelector('#quantity-f');
+    const amPmButton2 = document.querySelector('.btn-time-picker-final');
+    let amPmState2 = 'AM';
 
-    if (parseInt(quantityInputI2.value) === 12) {
-      amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-      amPmButton2.innerText = amPmState2;
-    }
+    // Agrega un evento de clic a los botones de incremento y decremento
+    upButtonI2.addEventListener('click', () => {
+      quantityInputI2.value = (parseInt(quantityInputI2.value) % 12) + 1;
 
-  });
-  downButtonI2.addEventListener('click', () => {
-    // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
-    if (parseInt(quantityInputI2.value) > 0) {
-      quantityInputI2.value = (parseInt(quantityInputI2.value) - 1 + 13) % 13;
-    } else {
-      quantityInputI2.value = 12;
-    }
+      if (parseInt(quantityInputI2.value) === 12) {
+        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
+        amPmButton2.innerText = amPmState2;
+      }
 
-    if (quantityInputI2.value === '12') {
-      amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-      amPmButton2.innerText = amPmState2;
-    }
-  });
-</script>
+    });
+    downButtonI2.addEventListener('click', () => {
+      // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
+      if (parseInt(quantityInputI2.value) > 0) {
+        quantityInputI2.value = (parseInt(quantityInputI2.value) - 1 + 13) % 13;
+      } else {
+        quantityInputI2.value = 12;
+      }
 
-<script>
-  // Encuentra los elementos span
-  const upButton2 = document.querySelector('.up-arrow-f-l');
-  const downButton2 = document.querySelector('.down-arrow-f-l');
-  // Encuentra el input
-  const quantityInput2 = document.querySelector('#quantity-f-l');
+      if (quantityInputI2.value === '12') {
+        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
+        amPmButton2.innerText = amPmState2;
+      }
+    });
+  </script>
 
-  // Agrega un evento de clic a los botones de incremento y decremento
-  upButton2.addEventListener('click', () => {
-    // Incrementa la cantidad en 15 y reinicia en 0 si es mayor a 59
-    if (parseInt(quantityInput2.value) + 15 > 59) {
-      quantityInput2.value = 0;
-    } else {
-      quantityInput2.value = (parseInt(quantityInput2.value) + 15) % 60;
-    }
-  });
-  downButton2.addEventListener('click', () => {
-    // Decrementa la cantidad en 15 y reinicia en 45 si es menor a 0
-    if (parseInt(quantityInput2.value) - 15 < 0) {
-      quantityInput2.value = 60 - Math.abs(parseInt(quantityInput2.value) - 15);
-    } else {
-      quantityInput2.value = (parseInt(quantityInput2.value) - 15) % 60;
-    }
-  });
-</script>
+  <script>
+    const upButton2 = document.querySelector('.up-arrow-f-l');
+    const downButton2 = document.querySelector('.down-arrow-f-l');
+    const quantityInput2 = document.querySelector('#quantity-f-l');
+    const quantityInputF3 = document.querySelector('#quantity-f');
+    
+    upButton2.addEventListener('click', () => {
+      if (parseInt(quantityInput2.value) + 15 > 59) {
+        quantityInput2.value = 0;
+      } else {
+        quantityInput2.value = (parseInt(quantityInput2.value) + 15) % 60;
+      }
+      if (quantityInput2.value === '0') {
+        quantityInputF3.value = (parseInt(quantityInputF3.value) % 12) + 1;
+      }
+
+    });
+    downButton2.addEventListener('click', () => {
+      // Decrementa la cantidad en 15 y reinicia en 45 si es menor a 0
+      if (parseInt(quantityInput2.value) - 15 < 0) {
+        quantityInput2.value = 60 - Math.abs(parseInt(quantityInput2.value) - 15);
+      } else {
+        quantityInput2.value = (parseInt(quantityInput2.value) - 15) % 60;
+      }
+      if (quantityInput2.value === '45') {
+        quantityInputF3.value = (parseInt(quantityInputF3.value) - 2 + 12) % 12 + 1;
+      }
+    });
+  </script>
 
 
-<script>
+  <script>
     const sidebarToggler = document.querySelector("#sidebar-toggler");
     sidebarToggler.addEventListener("click", () => {
       const sidebar = document.querySelector(".sidebar");
       sidebar.classList.toggle("active");
     });
-</script>
+  </script>
 </body>
 
 </html>
