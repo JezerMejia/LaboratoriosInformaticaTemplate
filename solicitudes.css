@@ -199,3 +199,98 @@ html, body {
 #datepicker{
     width: fit-content;
 }
+
+/* Time Picker */
+
+.timePicker-inicio{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.timePicker-final{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.container-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #848188;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 6px;
+  }
+  
+  .input-picker {
+    display: block;
+    white-space: nowrap;
+    color: #848188;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+    border-style: none;
+    width: 20px;
+    align-items: center;
+  }
+
+  .first-picker{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }
+
+  .last-picker{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }
+
+  .btn-time-picker-inicio{
+    background-color: #105dfb;
+    color: white;
+    width: 45px;
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  .btn-time-picker-final{
+    background-color: #105dfb;
+    color: white;
+    width: 45px;
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  .timepicker-container{
+    display: flex;
+    gap: 2rem;
+  }
+
+  select {
+    border: 2px solid #848188;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    color: #848188;
+
+    padding: 10px;
+  }
+
+  .text-top-solicitud{
+    display: flex;
+    gap: 7rem;
+  }
+
+  .top-text-inicio{
+    padding-left: 1rem;
+  }
