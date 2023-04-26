@@ -229,7 +229,7 @@
                       <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
                     </span>
                     <div class="container-input">
-                      <input type="number" class="input-picker" id="quantity" value="1" min="1" max="12">
+                      <input type="number" class="input-picker" id="quantity" value="01" min="1" max="12">
                     </div>
                     <span class="down-arrow">
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
@@ -243,7 +243,7 @@
                       <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
                     </span>
                     <div class="container-input">
-                      <input type="number" class="input-picker" id="quantity-l" value="0" min="0" max="59">
+                      <input type="number" class="input-picker" id="quantity-l" value="00" min="0" max="59">
                     </div>
                     <span class="down-arrow-l">
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
@@ -261,7 +261,7 @@
                       <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
                     </span>
                     <div class="container-input">
-                      <input type="number" class="input-picker" id="quantity-f" value="1" min="1" max="12">
+                      <input type="number" class="input-picker" id="quantity-f" value="01" min="1" max="12">
                     </div>
                     <span class="down-arrow-f">
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
@@ -275,7 +275,7 @@
                       <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
                     </span>
                     <div class="container-input">
-                      <input type="number" class="input-picker" id="quantity-f-l" value="0" min="0" max="59">
+                      <input type="number" class="input-picker" id="quantity-f-l" value="00" min="0" max="59">
                     </div>
                     <span class="down-arrow-f-l">
                       <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
@@ -368,6 +368,9 @@
         amPmButton.innerText = amPmState;
       }
 
+      if(parseInt(quantityInputI.value) < 10){
+        quantityInputI.value = '0' + quantityInputI.value;
+      }
     });
     downButtonI.addEventListener('click', () => {
       // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
@@ -381,6 +384,10 @@
         amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
         amPmButton.innerText = amPmState;
       }
+
+      if(parseInt(quantityInputI.value) < 10){
+        quantityInputI.value = '0' + quantityInputI.value;
+      }
     });
   </script>
 
@@ -389,6 +396,8 @@
     const downButton = document.querySelector('.down-arrow-l');
     const quantityInput = document.querySelector('#quantity-l');
     const quantityInput3 = document.querySelector('#quantity');
+    const amPmButton1 = document.querySelector('.btn-time-picker-inicio');
+    let amPmState1 = 'AM';
 
     upButton.addEventListener('click', () => {
       if (parseInt(quantityInput.value) + 15 > 59) {
@@ -398,6 +407,19 @@
       }
       if (quantityInput.value === '0') {
         quantityInput3.value = (parseInt(quantityInput3.value) % 12) + 1;
+
+        if(parseInt(quantityInput3.value) < 10){
+        quantityInput3.value = '0' + quantityInput3.value;
+        }
+      }
+
+      if (quantityInput3.value === '12' && quantityInput.value === '0') {
+        amPmState1 = (amPmState1 === 'AM') ? 'PM' : 'AM';
+        amPmButton1.innerText = amPmState1;
+      }
+
+      if(parseInt(quantityInput.value) < 10){
+        quantityInput.value = '0' + quantityInput.value;
       }
     });
     downButton.addEventListener('click', () => {
@@ -408,6 +430,18 @@
       }
       if (quantityInput.value === '45') {
         quantityInput3.value = (parseInt(quantityInput3.value) - 2 + 12) % 12 + 1;
+        if(parseInt(quantityInput3.value) < 10){
+        quantityInput3.value = '0' + quantityInput3.value;
+        }
+      }
+
+      if (quantityInput3.value === '12' && quantityInput.value === '0') {
+        amPmState1 = (amPmState1 === 'AM') ? 'PM' : 'AM';
+        amPmButton1.innerText = amPmState1;
+      }
+
+      if(parseInt(quantityInput.value) < 10){
+        quantityInput.value = '0' + quantityInput.value;
       }
 
     });
@@ -431,6 +465,10 @@
         amPmButton2.innerText = amPmState2;
       }
 
+      if(parseInt(quantityInputI2.value) < 10){
+        quantityInputI2.value = '0' + quantityInputI2.value;
+      }
+
     });
     downButtonI2.addEventListener('click', () => {
       // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
@@ -444,6 +482,10 @@
         amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
         amPmButton2.innerText = amPmState2;
       }
+
+      if(parseInt(quantityInputI2.value) < 10){
+        quantityInputI2.value = '0' + quantityInputI2.value;
+      }
     });
   </script>
 
@@ -452,6 +494,8 @@
     const downButton2 = document.querySelector('.down-arrow-f-l');
     const quantityInput2 = document.querySelector('#quantity-f-l');
     const quantityInputF3 = document.querySelector('#quantity-f');
+    const amPmButton3 = document.querySelector('.btn-time-picker-final');
+    let amPmState3 = 'AM';
     
     upButton2.addEventListener('click', () => {
       if (parseInt(quantityInput2.value) + 15 > 59) {
@@ -461,6 +505,18 @@
       }
       if (quantityInput2.value === '0') {
         quantityInputF3.value = (parseInt(quantityInputF3.value) % 12) + 1;
+
+        if(parseInt(quantityInputF3.value) < 10){
+        quantityInputF3.value = '0' + quantityInputF3.value;
+        } 
+      }
+      if (quantityInputF3.value === '12' && quantityInput2.value === '0') {
+        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
+        amPmButton2.innerText = amPmState2;
+      }
+
+      if(parseInt(quantityInput2.value) < 10){
+        quantityInput2.value = '0' + quantityInput2.value;
       }
 
     });
@@ -473,7 +529,30 @@
       }
       if (quantityInput2.value === '45') {
         quantityInputF3.value = (parseInt(quantityInputF3.value) - 2 + 12) % 12 + 1;
+
+        if(parseInt(quantityInputF3.value) < 10){
+        quantityInputF3.value = '0' + quantityInputF3.value;
+        }
       }
+
+      if (quantityInputF3.value === '12' && quantityInput2 === '00') {
+        amPmState3 = (amPmState3 === 'AM') ? 'PM' : 'AM';
+        amPmButton3.innerText = amPmState3;
+        console.log("Hello")
+      }
+
+      if(parseInt(quantityInput2.value) < 10){
+        quantityInput2.value = '0' + quantityInput2.value;
+      }
+    });
+  </script>
+
+  <!--XD-->
+  <script>
+    $('.input-picker').on('input', function() {
+	  var x = $(this).val();
+  	if (x < 10) x = '0' + x;
+	  $(this).val(x);
     });
   </script>
 
