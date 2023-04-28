@@ -1,11 +1,14 @@
 :root {
   font-family: "Inter", sans-serif;
   --bg-institucional: #001b36;
+  --bg-default: #fafafa;
 }
 
 html,
 body {
+  font-family: inherit;
   min-height: 100vh;
+  background-color: var(--bg-default);
 }
 
 .wrapper {
@@ -118,6 +121,25 @@ body {
 .account-role {
   font-size: 0.75em;
   font-weight: 300;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-3 {
+  gap: 1rem;
+}
+.gap-4 {
+  gap: 1.5rem;
+}
+.gap-5 {
+  gap: 3rem;
+}
+
+.rounded-xl {
+  border-radius: 0.5rem !important;
 }
 
 @media (min-width: 576px) {
