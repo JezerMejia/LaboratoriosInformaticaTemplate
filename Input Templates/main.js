@@ -1,5 +1,6 @@
 const btnSpinnerUp = document.querySelector('.btn--spinner-up')
 const btnSpinnerDown = document.querySelector('.btn--spinner-down')
+const ddlAmPm = document.getElementById('ddlAmPm')
 
 function validarNumeros(input) {
     // Eliminar cualquier caracter que no sea un número
@@ -19,6 +20,18 @@ function spinnerUp(inputClass){
     // Agregar un cero delante si la cantidad es menor que 10
     if (value < 10) {
         value = "0" + value;
+    }
+
+    if(value == 13){
+        value = 1
+        if(ddlAmPm.selectedIndex == 0){
+            ddlAmPm.selectedIndex = 1
+        }
+
+        else if(ddlAmPm.selectedIndex == 1){
+            ddlAmPm.selectedIndex = 0
+        }
+         
     }
 
     input.value = value

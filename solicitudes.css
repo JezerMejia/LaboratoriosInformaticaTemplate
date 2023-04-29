@@ -189,6 +189,14 @@ html, body {
     font-weight: bold;
 }
 
+.table th {
+    border-top: 0;
+}
+
+.card{
+    border-radius: 0.5rem!important;
+}
+
 /*MODAL*/
 
 .Select{

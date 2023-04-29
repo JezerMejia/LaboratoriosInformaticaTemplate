@@ -136,50 +136,64 @@
           <input type="text" id="myInput" class="form-control mb-3" placeholder="Search..." />
         </div>
       </div>
-      <table id="dtTable" class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Estudiante</th>
-            <th scope="col">Laboratorio</th>
-            <th scope="col">Computadora</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Hora Inicio</th>
-            <th scope="col">Hora Fin</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Juan Perez</td>
-            <td>LAB B</td>
-            <td>4B</td>
-            <td>2023-03-20</td>
-            <td>3:30 PM</td>
-            <td>5:00 PM</td>
-          </tr>
-          <!---->
-          <tr data-filter-item="Esteman">
-            <th scope="row">2</th>
-            <td>Esteman</td>
-            <td>LAB B</td>
-            <td>4B</td>
-            <td>2023-03-20</td>
-            <td>3:50 PM</td>
-            <td>4:30 PM</td>
-          </tr>
-          <!---->
-          <tr>
-            <th scope="row">3</th>
-            <td>Residente</td>
-            <td>LAB A</td>
-            <td>4D</td>
-            <td>2023-03-20</td>
-            <td>4:00 PM</td>
-            <td>5:00 PM</td>
-          </tr>
-        </tbody>
-      </table>
+
+      <div class="card">
+        <div class="card-body">
+          <table id="dtTable" class="table no-border-top">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Estudiante</th>
+                <th scope="col">Laboratorio</th>
+                <th scope="col">Computadora</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora Inicio</th>
+                <th scope="col">Hora Fin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Juan Perez</td>
+                <td>LAB B</td>
+                <td>4B</td>
+                <td>2023-03-20</td>
+                <td>3:30 PM</td>
+                <td>5:00 PM</td>
+              </tr>
+              <!---->
+              <tr data-filter-item="Esteman">
+                <th scope="row">2</th>
+                <td>Esteman</td>
+                <td>LAB B</td>
+                <td>4B</td>
+                <td>2023-03-20</td>
+                <td>3:50 PM</td>
+                <td>4:30 PM</td>
+              </tr>
+              <!---->
+              <tr>
+                <th scope="row">3</th>
+                <td>Residente</td>
+                <td>LAB A</td>
+                <td>4D</td>
+                <td>2023-03-20</td>
+                <td>4:00 PM</td>
+                <td>5:00 PM</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Calle 13</td>
+                <td>LAB A</td>
+                <td>4D</td>
+                <td>2023-03-20</td>
+                <td>4:00 PM</td>
+                <td>5:00 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
