@@ -1,0 +1,76 @@
+
+/* NO AGREGAR ESTOS ESTILOS */
+/* Solo son estilos de decoración en la presentación de los inputs */
+
+.all-inputs-container{
+    display: flex !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+}
+
+.flex-container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.all-spinners-container{
+    display: flex;
+    gap: 50px;
+}
+
+.spinners-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Estos estilos son opcionales, dividir en dos columnas el checkbox de íconos */
+
+.checkbox-container{
+    width: 400px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estos estilos son obligatorios para tener la apariencia del figma*/
+
+.border{
+    border: 1px solid #848288 !important;
+    border-radius: 8px !important;
+}
+
+.checkbox-item img{
+    width: 40px;
+}
+
+.spinner{
+    max-width: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.spinner input{
+    text-align: center;
+    height: 45px;
+}
+
+.spinner-divider{
+    font-weight: bold;
+}
+
+.checkbox--am-pm{
+    width: 45px;
+}
+
+.checkbox--am-pm select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 8px !important;
+    text-align: center;
+    border: none;
+}

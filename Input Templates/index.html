@@ -8,30 +8,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-
+    <!--Iconos-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        .flex-container{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .checkbox-container{
-            width: 400px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="./styles.css">
 <body>
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col-md-8 mx-auto" style="display: flex; gap: 20px; flex-wrap: wrap">
-
+        <div class="col-md-8 mx-auto" style="display: flex;gap: 20px;flex-wrap: wrap;">
 
             <div class="input-container">
                 <span>Buscar textbox (Solicitudes y mas)</span>
@@ -39,7 +24,7 @@
                     <span class="input-group-prepend">
                         <div class="input-group-text bg-transparent border-right-0"><i class="fa fa-search"></i></div>
                     </span>
-                    <input class="form-control py-2 border-left-0 border shadow-none" type="search" placeholder="Buscar...">
+                    <input class="form-control py-2 border-left-0 shadow-none" type="search" placeholder="Buscar...">
                 </div>
             </div>
 
@@ -72,12 +57,12 @@
             </div>
 
             <div class="input-container">
-                <span>Textbox (Añadir Laboratorio en "Nombre*" & Añadir Estudiantes, en todas partes)</span>
+                <p>Textbox (Añadir Laboratorio en "Nombre*" & Añadir Estudiantes, en todas partes)</p>
                 <div class="custom-control custom-checkbox checkbox-container">
                     <div class="checkbox-item">
                         <input type="checkbox" class="" id="customCheck1">
                         <label class="" for="customCheck1">
-                            <img style="width: 40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
                             <span>Illustrator</span>
                         </label>
                     </div>
@@ -85,7 +70,7 @@
                     <div class="checkbox-item">
                         <input type="checkbox" class="" id="customCheck2">
                         <label class="" for="customCheck2">
-                            <img style="width: 40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
                             <span>Illustrator</span>
                         </label>
                     </div>
@@ -93,7 +78,7 @@
                     <div class="checkbox-item">
                         <input type="checkbox" class="" id="customCheck3">
                         <label class="" for="customCheck3">
-                            <img style="width: 40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
                             <span>Illustrator</span>
                         </label>
                     </div>
@@ -101,7 +86,7 @@
                     <div class="checkbox-item">
                         <input type="checkbox" class="" id="customCheck4">
                         <label class="" for="customCheck4">
-                            <img style="width: 40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/2101px-Adobe_Illustrator_CC_icon.svg.png" alt="Icono software">
                             <span>Illustrator</span>
                         </label>
                     </div>
@@ -110,18 +95,76 @@
 
             <div class="input-container">
                 <span>Editable DropDownList (Añadir Sofware en "Categoria*")</span>
-                <select class="selectpicker border rounded form-control shadow-none pl-1" contenteditable="true" pla>
-                    <option selected>Elige o agrega una categoria</option>
-                    <option>Laboratorio A</option>
-                    <option>Laboratorio B</option>
-                    <option>Laboratorio C</option>
-                </select>
+                <input type="text" placeholder="Elige o agrega una categoria" class="form-control dropdown-toggle border" id="editableSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+
+                <div class="dropdown-menu" aria-labelledby="editableSelect">
+                    <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', 'Básico')">Básico</a>
+                    <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', 'Diseño')">Diseño</a>
+                    <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', 'Programación')">Programación</a>
+                </div>
+
             </div>
 
+            <div class="input-container">
+                <span>Time pickers/spinners (Añadir Solicitud en hora de inicio y fin)</span>
+                <div class="all-spinners-container">
+                    <div class="spinners-container">
+                        <div class="spinner">
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('start-hour')"></i>
+                            <input type="text" class="border form-control rounded shadow-none start-hour" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
+                                   oninput="validarNumeros(this)">
+                            <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('start-hour')"></i>
+                        </div>
+                        <span class="spinner-divider">:</span>
+                        <div class="spinner">
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('start-minutes')"></i>
+                            <input type="text" class="border form-control rounded shadow-none start-minutes" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
+                                   oninput="validarNumeros(this)">
+                            <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('start-minutes')"></i>
+                        </div>
 
+                        <div class="checkbox--am-pm">
+                            <select class="rounded form-control shadow-none px-1 bg-primary text-white">
+                                <option selected>AM</option>
+                                <option>PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="spinners-container">
+                        <div class="spinner">
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('end-hour')"></i>
+                            <input type="text" class="border form-control rounded shadow-none end-hour" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
+                                   oninput="validarNumeros(this)">
+                            <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('end-hour')"></i>
+                        </div>
+                        <span class="spinner-divider">:</span>
+                        <div class="spinner">
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('end-minutes')"></i>
+                            <input type="text" class="border form-control rounded shadow-none end-minutes" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
+                                   oninput="validarNumeros(this)">
+                            <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('end-minutes')"></i>
+                        </div>
+
+                        <div class="checkbox--am-pm">
+                            <select class="rounded form-control shadow-none px-1 bg-primary text-white">
+                                <option selected>AM</option>
+                                <option>PM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <span>Time Pickers (Laboratorio A Otro en Horario)</span>
+                <input type="time" class="border form-control rounded shadow-none" value="2023-03-23">
+            </div>
         </div>
     </div>
 </div>
+
+<script src="./main.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
