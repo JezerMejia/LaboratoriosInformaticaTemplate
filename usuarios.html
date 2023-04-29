@@ -195,33 +195,62 @@
               <h5 class="modal-title" id="exampleModalLongTitle">Añadir Estudiante</h5>
             </div>
             <div class="modal-body">
+              <h6>Datos generales</h6>
+              
               <div class="Select">
-                <div class="Select-Lab">
-                  <h6>Laboratorio</h6>
-                  <select class="form-select" aria-label="Default select example">
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                <div class="Select-Name">
+                  <h9>Nombres*</h9>
+                  <input type="text" class="form-control" id="nombre" placeholder="Juan">
                 </div>
-                <div class="Select-PC">
-                  <h6>Computadora</h6>
-                  <select class="form-select" aria-label="Default select example">
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                <div class="Select-Apell">
+                  <h9>Apellidos*</h9>
+                  <input type="text" class="form-control" id="apellido" placeholder="Pérez">
                 </div>
               </div>
               <br>
-              <h6>Solicitud</h6>
-              <input type="text" class="form-control" id="datepicker" placeholder="Fecha...">
-              <br>
-
-              <div class="text-top-solicitud">
-                <h6 class="top-text-inicio">Hora Inicio</h6>
-                <h6 class="top-text-final">Hora Salida</h6>
+              <div class="Select">
+                <div class="Select-Nac">
+                  <h9>Fecha de nacimiento*</h9>
+                  <input type="date" class="form-control" id="fechaNac" placeholder="09/06/1994">
+                </div>
+                <div class="Select-Telf">
+                  <h9>Teléfono</h9>
+                  <input type="text" class="form-control" id="telf" placeholder="1212-1212">
+                </div>
               </div>
+              <br>
+            <div class="Select">
+            <div class="Select-Genero">
+              <h9>Género</h9>
+              <br>
+              <select class="form-select" aria-label="Default select example">
+                <option value="1">Masculino</option>
+                <option value="2">Femenino</option>
+                <option value="3">Otro</option>
+              </select>
+            </div>
+            </div>
+            <br>
+            <h6>Datos de la universidad</h6>
+            
+            <h9>Carnet*</h9>
+            <input type="text" class="form-control" id="carnet" placeholder="000023418">
+            <br>
+            <h9>Correo*</h9>
+            <input type="email" class="form-control" id="email" placeholder="juan.perez@est.uca.edu.ni">
+            <p><small>Ingresa el correo institucional</small></p>
+            
+            <div class="Select">
+              <div class="Select-contra">
+                <h9>Contraseña*</h9>
+                <input type="password" class="form-control" id="contraseña" placeholder="******">
+              </div>
+              <div class="Select-contra2">
+                <h9>Repetir contraseña*</h9>
+                <input type="password" class="form-control" id="contraseña2" placeholder="******">
+              </div>
+            </div>
+              <!--
               <div class="timepicker-container">
 
                 <div class="timePicker-inicio">
@@ -286,12 +315,12 @@
 
                   <button class="btn-time-picker-final">AM</button>
                 </div>
-              </div>
+              </div> -->
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary">Añadir</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
           </div>
         </div>
