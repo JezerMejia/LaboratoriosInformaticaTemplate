@@ -114,9 +114,62 @@
         </div>
       </nav>
 
-      <main class="container p-4">
-        <h2>Dashboard</h2>
-      </main>
+      <div class="overflow-auto w-100">
+        <main class="container p-5 h-100">
+          <h2>Dashboard</h2>
+
+          <div
+            class="card border-0 rounded-xl shadow p-3 d-flex align-items-center"
+          >
+            <p>Card con sombra</p>
+            <div
+              class="card border border-dark rounded-xl p-3 d-flex align-items-center bg-white"
+            >
+              <p>Card con bordes</p>
+              <p>Puede estar dentro de una card con sombra</p>
+            </div>
+          </div>
+
+          <hr class="m-4" />
+
+          <div
+            class="card border border-secondary rounded-xl p-3 d-flex align-items-center bg-white"
+          >
+            <p>Card con bordes</p>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
+              Añadir carrera
+            </button>
+          </div>
+        </main>
+      </div>
+
+      <div class="modal fade" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content rounded-xl">
+            <div class="modal-header">
+              <h5 class="modal-title">Añadir carrera</h5>
+            </div>
+            <div class="modal-body">
+              <p>Aquí iría el formulario.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary px-5">Añadir</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
