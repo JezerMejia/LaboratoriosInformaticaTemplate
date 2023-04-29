@@ -215,6 +215,7 @@ html, body {
 
 #datepicker{
     width: fit-content;
+    
 }
 
 /* Time Picker */
@@ -339,3 +340,28 @@ html, body {
     border-top: 0;
     justify-content: start;
   }
+  input[type=text_agregar] {
+    -moz-appearance: textfield; /* Firefox */
+    border-style: 1;
+    width: 202px;
+    align-items: center;
+  }
+  input[type=date] {
+    -moz-appearance: textfield; /* Firefox */
+    border-style: 1;
+    width: 202px;
+    align-items: center;
+  }
+  input[type=email] {
+    -moz-appearance: textfield; /* Firefox */
+    border-style: 1;
+    width: 202px;
+    align-items: center;
+  }
+  input[type=password] {
+    -moz-appearance: textfield; /* Firefox */
+    border-style: 1;
+    width: 202px;
+    align-items: center;
+  }
+
