@@ -373,35 +373,24 @@
     const amPmButton = document.querySelector('.btn-time-picker-inicio');
     let amPmState = 'AM';
 
+    function updateQuantityInput(amount) {
+      // Actualiza la cantidad en el input de cantidad y cambia de PM a AM si es necesario
+      let newQuantity = ((parseInt(quantityInputI.value) + amount - 1 + 12) % 12) + 1;
+      console.log(newQuantity);
+      quantityInputI.value = (newQuantity < 10 ? '0' : '') + newQuantity;
+
+      if (newQuantity === 12) {
+        amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
+        amPmButton.innerText = amPmState;
+      }
+    }
+
     // Agrega un evento de clic a los botones de incremento y decremento
     upButtonI.addEventListener('click', () => {
-      quantityInputI.value = (parseInt(quantityInputI.value) % 12) + 1;
-
-      if (parseInt(quantityInputI.value) === 12) {
-        amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
-        amPmButton.innerText = amPmState;
-      }
-
-      if(parseInt(quantityInputI.value) < 10){
-        quantityInputI.value = '0' + quantityInputI.value;
-      }
+      updateQuantityInput(1);
     });
     downButtonI.addEventListener('click', () => {
-      // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
-      if (parseInt(quantityInputI.value) > 0) {
-        quantityInputI.value = (parseInt(quantityInputI.value) - 1 + 13) % 13;
-      } else {
-        quantityInputI.value = 12;
-      }
-
-      if (quantityInputI.value === '12') {
-        amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
-        amPmButton.innerText = amPmState;
-      }
-
-      if(parseInt(quantityInputI.value) < 10){
-        quantityInputI.value = '0' + quantityInputI.value;
-      }
+      updateQuantityInput(-1);
     });
   </script>
 
@@ -413,151 +402,130 @@
     const amPmButton1 = document.querySelector('.btn-time-picker-inicio');
     let amPmState1 = 'AM';
 
+    function updateQuantity(delta) {
+      const currentValue = parseInt(quantityInput.value);
+      const newValue = (currentValue + delta + 60) % 60;
+      console.log(newValue);
+
+      quantityInput.value = newValue < 10 ? '0' + newValue : newValue;
+
+      if (newValue === 0) {
+
+        if(delta < 0){
+          quantityInput3.value = parseInt(quantityInput3.value) - 1;
+        }
+        if(delta > 0){
+          quantityInput3.value = parseInt(quantityInput3.value) + 1;
+        }
+
+        if (parseInt(quantityInput3.value) < 1) {
+          quantityInput3.value = '12';
+        }
+        if (parseInt(quantityInput3.value) < 10) {
+          quantityInput3.value = '0' + quantityInput3.value;
+        }
+      } else if (newValue === 45) {
+        quantityInput3.value = (parseInt(quantityInput3.value) - 1 + 11) % 11 + 1;
+        if (parseInt(quantityInput3.value) < 10) {
+          quantityInput3.value = '0' + quantityInput3.value;
+        }
+      }
+
+      if (quantityInput3.value === '12' && newValue === 0) {
+        amPmState1 = amPmState1 === 'AM' ? 'PM' : 'AM';
+        amPmButton1.innerText = amPmState1;
+      }
+    }
+
     upButton.addEventListener('click', () => {
-      if (parseInt(quantityInput.value) + 15 > 59) {
-        quantityInput.value = 0;
-      } else {
-        quantityInput.value = (parseInt(quantityInput.value) + 15) % 60;
-      }
-      if (quantityInput.value === '0') {
-        quantityInput3.value = (parseInt(quantityInput3.value) % 12) + 1;
-
-        if(parseInt(quantityInput3.value) < 10){
-        quantityInput3.value = '0' + quantityInput3.value;
-        }
-      }
-
-      if (quantityInput3.value === '12' && quantityInput.value === '0') {
-        amPmState1 = (amPmState1 === 'AM') ? 'PM' : 'AM';
-        amPmButton1.innerText = amPmState1;
-      }
-
-      if(parseInt(quantityInput.value) < 10){
-        quantityInput.value = '0' + quantityInput.value;
-      }
+      updateQuantity(15);
     });
+
     downButton.addEventListener('click', () => {
-      if (parseInt(quantityInput.value) - 15 < 0) {
-        quantityInput.value = 60 - Math.abs(parseInt(quantityInput.value) - 15);
-      } else {
-        quantityInput.value = (parseInt(quantityInput.value) - 15) % 60;
-      }
-      if (quantityInput.value === '45') {
-        quantityInput3.value = (parseInt(quantityInput3.value) - 2 + 12) % 12 + 1;
-        if(parseInt(quantityInput3.value) < 10){
-        quantityInput3.value = '0' + quantityInput3.value;
-        }
-      }
-
-      if (quantityInput3.value === '12' && quantityInput.value === '0') {
-        amPmState1 = (amPmState1 === 'AM') ? 'PM' : 'AM';
-        amPmButton1.innerText = amPmState1;
-      }
-
-      if(parseInt(quantityInput.value) < 10){
-        quantityInput.value = '0' + quantityInput.value;
-      }
-
+      updateQuantity(-15);
     });
   </script>
 
   <!--TimePicker 2-->
 
   <script>
-    const upButtonI2 = document.querySelector('.up-arrow-f');
-    const downButtonI2 = document.querySelector('.down-arrow-f');
-    const quantityInputI2 = document.querySelector('#quantity-f');
-    const amPmButton2 = document.querySelector('.btn-time-picker-final');
-    let amPmState2 = 'AM';
+    const upButtonF = document.querySelector('.up-arrow-f');
+    const downButtonF = document.querySelector('.down-arrow-f');
+    const quantityInputF = document.querySelector('#quantity-f');
+    const amPmButtonF = document.querySelector('.btn-time-picker-final');
+    let amPmStateF = 'AM';
+
+    function updateQuantityInput2(amount) {
+      // Actualiza la cantidad en el input de cantidad y cambia de PM a AM si es necesario
+      let newQuantity = ((parseInt(quantityInputF.value) + amount - 1 + 12) % 12) + 1;
+      console.log(newQuantity);
+      quantityInputF.value = (newQuantity < 10 ? '0' : '') + newQuantity;
+
+      if (newQuantity === 12) {
+        amPmStateF = (amPmStateF === 'AM') ? 'PM' : 'AM';
+        amPmButtonF.innerText = amPmStateF;
+      }
+    }
 
     // Agrega un evento de clic a los botones de incremento y decremento
-    upButtonI2.addEventListener('click', () => {
-      quantityInputI2.value = (parseInt(quantityInputI2.value) % 12) + 1;
-
-      if (parseInt(quantityInputI2.value) === 12) {
-        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-        amPmButton2.innerText = amPmState2;
-      }
-
-      if(parseInt(quantityInputI2.value) < 10){
-        quantityInputI2.value = '0' + quantityInputI2.value;
-      }
-
+    upButtonF.addEventListener('click', () => {
+      updateQuantityInput2(1);
     });
-    downButtonI2.addEventListener('click', () => {
-      // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
-      if (parseInt(quantityInputI2.value) > 0) {
-        quantityInputI2.value = (parseInt(quantityInputI2.value) - 1 + 13) % 13;
-      } else {
-        quantityInputI2.value = 12;
-      }
-
-      if (quantityInputI2.value === '12') {
-        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-        amPmButton2.innerText = amPmState2;
-      }
-
-      if(parseInt(quantityInputI2.value) < 10){
-        quantityInputI2.value = '0' + quantityInputI2.value;
-      }
+    downButtonF.addEventListener('click', () => {
+      updateQuantityInput2(-1);
     });
+
   </script>
 
   <script>
-    const upButton2 = document.querySelector('.up-arrow-f-l');
-    const downButton2 = document.querySelector('.down-arrow-f-l');
-    const quantityInput2 = document.querySelector('#quantity-f-l');
-    const quantityInputF3 = document.querySelector('#quantity-f');
-    const amPmButton3 = document.querySelector('.btn-time-picker-final');
-    let amPmState3 = 'AM';
+    const upButtonFL = document.querySelector('.up-arrow-f-l');
+    const downButtonFL = document.querySelector('.down-arrow-f-l');
+    const quantityInputFL = document.querySelector('#quantity-f-l');
+    const quantityInputFF = document.querySelector('#quantity-f');
+    const amPmButtonFL = document.querySelector('.btn-time-picker-final');
+    let amPmStateFL = 'AM';
     
-    upButton2.addEventListener('click', () => {
-      if (parseInt(quantityInput2.value) + 15 > 59) {
-        quantityInput2.value = 0;
-      } else {
-        quantityInput2.value = (parseInt(quantityInput2.value) + 15) % 60;
-      }
-      if (quantityInput2.value === '0') {
-        quantityInputF3.value = (parseInt(quantityInputF3.value) % 12) + 1;
+    function updateQuantity2(delta2) {
+      const currentValue = parseInt(quantityInputFL.value);
+      const newValue = (currentValue + delta2 + 60) % 60;
+      console.log(newValue);
 
-        if(parseInt(quantityInputF3.value) < 10){
-        quantityInputF3.value = '0' + quantityInputF3.value;
-        } 
-      }
-      if (quantityInputF3.value === '12' && quantityInput2.value === '0') {
-        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-        amPmButton2.innerText = amPmState2;
-      }
+      quantityInputFL.value = newValue < 10 ? '0' + newValue : newValue;
 
-      if(parseInt(quantityInput2.value) < 10){
-        quantityInput2.value = '0' + quantityInput2.value;
-      }
+      if (newValue === 0) {
 
-    });
-    downButton2.addEventListener('click', () => {
-      // Decrementa la cantidad en 15 y reinicia en 45 si es menor a 0
-      if (parseInt(quantityInput2.value) - 15 < 0) {
-        quantityInput2.value = 60 - Math.abs(parseInt(quantityInput2.value) - 15);
-      } else {
-        quantityInput2.value = (parseInt(quantityInput2.value) - 15) % 60;
-      }
-      if (quantityInput2.value === '45') {
-        quantityInputF3.value = (parseInt(quantityInputF3.value) - 2 + 12) % 12 + 1;
+        if(delta2 < 0){
+          quantityInputFF.value = parseInt(quantityInputFF.value) - 1;
+        }
+        if(delta2 > 0){
+          quantityInputFF.value = parseInt(quantityInputFF.value) + 1;
+        }
 
-        if(parseInt(quantityInputF3.value) < 10){
-        quantityInputF3.value = '0' + quantityInputF3.value;
+        if (parseInt(quantityInputFF.value) < 1) {
+          quantityInputFF.value = '12';
+        }
+        if (parseInt(quantityInputFF.value) < 10) {
+          quantityInputFF.value = '0' + quantityInputFF.value;
+        }
+      } else if (newValue === 45) {
+        quantityInputFF.value = (parseInt(quantityInputFF.value) - 1 + 11) % 11 + 1;
+        if (parseInt(quantityInputFF.value) < 10) {
+          quantityInputFF.value = '0' + quantityInputFF.value;
         }
       }
 
-      if (quantityInputF3.value === '12' && quantityInput2 === '00') {
-        amPmState3 = (amPmState3 === 'AM') ? 'PM' : 'AM';
-        amPmButton3.innerText = amPmState3;
-        console.log("Hello")
+      if (quantityInputFF.value === '12' && newValue === 0) {
+        amPmStateFL = amPmStateFL === 'AM' ? 'PM' : 'AM';
+        amPmButtonFL.innerText = amPmStateFL;
       }
+    }
 
-      if(parseInt(quantityInput2.value) < 10){
-        quantityInput2.value = '0' + quantityInput2.value;
-      }
+    upButtonFL.addEventListener('click', () => {
+      updateQuantity2(15);
+    });
+
+    downButtonFL.addEventListener('click', () => {
+      updateQuantity2(-15);
     });
   </script>
 
