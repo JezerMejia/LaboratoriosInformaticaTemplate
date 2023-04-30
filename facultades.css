@@ -1,6 +1,6 @@
 /*SideBar CSS*/
 
-* {
+*{
     margin: 0;
     padding: 0;
 }
@@ -10,8 +10,7 @@
     --bg-institucional: #001B36;
 }
 
-html,
-body {
+html, body {
     min-height: 100vh;
 }
 
@@ -31,11 +30,9 @@ body {
 .brand {
     display: block;
 }
-
-.brand>img {
+.brand > img {
     width: 3em;
 }
-
 .sidebar {
     position: relative;
     width: 100%;
@@ -46,21 +43,16 @@ body {
     padding: 1em;
     transition: 0.3s margin-left;
 }
-
 .sidebar.active {
     margin-left: 0px;
 }
-
-.sidebar .nav,
-.sidebar .nav-container {
+.sidebar .nav, .sidebar .nav-container {
     gap: 0.75em;
 }
-
 .sidebar hr {
     width: 100%;
     border-color: white;
 }
-
 .sidebar .nav-link {
     display: flex;
     color: white;
@@ -71,9 +63,7 @@ body {
     gap: 0.5em;
     font-weight: 500;
 }
-
-.sidebar .nav-link.active,
-.sidebar .nav-link:hover {
+.sidebar .nav-link.active, .sidebar .nav-link:hover {
     color: black;
     background-color: white;
 }
@@ -81,11 +71,9 @@ body {
 .sidebar.active #sidebar-toggler {
     right: -2.5em;
 }
-
-.sidebar.active #sidebar-toggler>i {
+.sidebar.active #sidebar-toggler > i{
     transform: rotate(0deg);
 }
-
 #sidebar-toggler {
     position: absolute;
     right: -1.25em;
@@ -99,8 +87,7 @@ body {
     height: 2.5em;
     transition: 0.3s right;
 }
-
-#sidebar-toggler>i {
+#sidebar-toggler > i {
     transition: 0.2s transform;
     transform: rotate(180deg);
 }
@@ -110,7 +97,6 @@ body {
     flex-direction: row;
     gap: 0.5em;
 }
-
 .account-img {
     width: 2em;
     height: 2em;
@@ -119,13 +105,11 @@ body {
     border-style: solid;
     border-color: white;
 }
-
 .account-details {
     display: flex;
     flex-direction: column;
     gap: 0;
 }
-
 .account-role {
     font-size: 0.75em;
     font-weight: 300;
@@ -135,26 +119,21 @@ body {
     .wrapper {
         flex-direction: row;
     }
-
     .sidebar {
         width: 290px;
         margin-left: 0px;
         padding: 2em;
     }
-
     .sidebar.active {
         margin-left: -290px;
     }
-
-    .brand>img {
+    .brand > img {
         width: 7em;
     }
-
     #sidebar-content.collapse {
         display: block;
     }
 }
-
 @media (min-width: 1600px) {
     .sidebar {
         width: 380px;
@@ -164,24 +143,29 @@ body {
 
 /*REST CSS*/
 
-.add {
+.add{
     background-color: #105dfb;
     color: white;
     border-radius: 10px;
     text-align: center;
-    width: 250px;
+    width: 280px;
     height: 35px;
 }
 
-.all {
+
+.all{
     background-color: transparent;
     color: #3B3A3D;
     border-style: none;
     width: 100px;
     height: 35px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.accept {
+.accept{
     background-color: transparent;
     color: #3B3A3D;
     border-style: none;
@@ -195,49 +179,53 @@ body {
     justify-content: space-between;
 }
 
-.nav-top .nav-item {
+.nav-top .nav-item{
     gap: 1rem;
     display: flex;
 }
 
-.all:hover {
+.all:hover{
     background-color: #3b3a3d21;
     font-weight: bold;
 }
 
-.accept:hover {
+.accept:hover{
     background-color: #3b3a3d21;
     font-weight: bold;
 }
 
-.table th {
+.table th, .table td {
     border-top: 0;
+    justify-content: center;
+    align-items: center;
 }
 
-.card {
-    border-radius: 0.5rem !important;
+
+
+.card{
+    border-radius: 0.5rem!important;
 }
 
 /*MODAL*/
 
-.Select {
+.Select{
     display: flex;
     gap: 1rem;
 }
 
-#datepicker {
+#datepicker{
     width: fit-content;
 }
 
 /* Time Picker */
 
-.timePicker-inicio {
+.timePicker-inicio{
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-.timePicker-final {
+.timePicker-final{
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -251,72 +239,35 @@ body {
     width: fit-content;
     padding: 5px;
     border-radius: 6px;
-}
+  }
+  
+  
 
-.input-picker {
-    display: block;
-    white-space: nowrap;
-    color: #848188;
-}
+  
+  }
 
-input[type=number] {
-    -moz-appearance: textfield;
-    /* Firefox */
-    border-style: none;
-    width: 20px;
-    align-items: center;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.first-picker{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.last-picker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.btn-time-picker-inicio {
+  .btn-time-picker-inicio{
     background-color: #105dfb;
     color: white;
     width: 45px;
     height: 30px;
     border-radius: 6px;
-}
+  }
 
-.btn-time-picker-final {
+  .btn-time-picker-final{
     background-color: #105dfb;
     color: white;
     width: 45px;
     height: 30px;
     border-radius: 6px;
-}
+  }
 
-.timepicker-container {
+  .timepicker-container{
     display: flex;
     gap: 2rem;
-}
+  }
 
-select {
+  select {
     border: 2px solid #848188;
     background-color: #fff;
     font-family: Arial, sans-serif;
@@ -326,13 +277,41 @@ select {
     color: #848188;
 
     padding: 10px;
-}
+  }
 
-.text-top-solicitud {
+  .text-top-solicitud{
     display: flex;
     gap: 7rem;
-}
+  }
 
-.top-text-inicio {
+  .top-text-inicio{
     padding-left: 1rem;
-}
+  }
+
+  img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
+  .modal-backdrop.show {
+    opacity: 0.3;
+  }
+  .modal-content {
+    padding: 2rem;
+  }
+  .modal-header {
+    padding: 0;
+    border-bottom: 0;
+  }
+  .modal-body {
+    padding: 1rem;
+  }
+  .modal-footer {
+    padding: 0;
+    border-top: 0;
+    justify-content: start;
+  }
