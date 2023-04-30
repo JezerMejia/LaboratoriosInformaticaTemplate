@@ -112,7 +112,7 @@
                 <!--Top items-->
                 <div class="top-item">
                     <button class="btn btn-transparent border-0"><span class="fa-solid fa-chevron-left fa-xl"></span>
-                        <span class="font-weight-bold">Laboratortio A</button>
+                        <span class="font-weight-bold">Laboratorio A</button>
 
                     <button id="btnActive" type="button" class="btn btn-light rounded-pill float-right">
                         <i class="fa-sharp fa-solid fa-circle me-1" style="color: #009877;">
@@ -221,8 +221,7 @@
                             <div class="item"><i class="fa-solid fa-desktop fa-2xl"></i></div>
                             <div class="item"><i class="fa-solid fa-desktop fa-2xl"></i></div>
                             <div class="item"><i class="fa-solid fa-desktop fa-2xl"></i></div>
-                            <div class="item" onclick="" data-toggle="collapse" data-target="#collapseOne"><i
-                                    class="fa-thin fa-circle" style="color: #ededed;"></i></div>
+                            <div class="item"><i class="fa-thin fa-circle" style="color: #ededed;"></i></div>
                             <div class="item"><i class="fa-thin fa-circle" style="color: #ededed;"></i></div>
                             <div class="item"><i class="fa-solid fa-desktop fa-2xl"></i></div>
                             <div class="item"><i class="fa-solid fa-desktop fa-2xl"></i></div>
@@ -321,41 +320,24 @@
 
                 <!--Col for ComputerD-->
                 <div class="col-xl-4 col-lg-5">
-                    <div id="accordion">
-                        <div class="card">
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                                data-parent="#accordion">
-                                <div class="card-body">
-                                    <h4 class="header mb-3 font-weight-bold text-dark">No hay computadora</h4>
-                                    <h6 class="text mb-3">Selecciona una computadora, mueve otra computadora a este lugar,
-                                         clona una ya existente o añade una nueva.</h6>
-                                    <button type="button" class="btn btn-primary">Añadir Computadora</button>
-                                </div>
-                            </div>
+                    <!--Computer details Card-->
+                    <div class="card border border-secondary rounded-xl bg-white">
+                        <!--Card Content-->
+                        <div class="card-body">
+                            <h4 class="header mb-3 font-weight-bold text-dark">No hay computadora</h4>
+                            <h6 class="text mb-3">Selecciona una computadora, mueve otra computadora a este lugar,
+                                 clona una ya existente o añade una nueva.</h6>
+                            <button type="button" class="btn btn-primary">Añadir Computadora</button>
                         </div>
+                        <!--/Software Cont-->
                     </div>
+                    <!--/Col for ComputerD-->
                 </div>
-            </div>
-            <!--/Col for ComputerD-->
-    </div>
-    <!--Row for Labs area-->
-    </main>
-    <!--/Main Content-->
+                <!--Row for Labs area-->
+        </main>
+        <!--/Main Content-->
     </div>
     <!--Wrapper Div-->
-
-    <script>
-        var myModal = document.getElementById('collapseOne');
-
-        myModal.addEventListener('shown.bs.modal', function () {
-            console.log('Modal abierto');
-        });
-
-        myModal.addEventListener('hidden.bs.modal', function () {
-            console.log('Modal cerrado');
-        });
-    </script>
-
 
     <!--Side bar script-->
     <script>
