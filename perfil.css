@@ -1,0 +1,235 @@
+/*SideBar CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: 'Inter', sans-serif;
+    --bg-institucional: #001B36;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    min-height: inherit;
+    flex-direction: column;
+}
+
+.bg-institucional {
+    background-color: var(--bg-institucional);
+}
+
+.brand {
+    display: block;
+}
+.brand > img {
+    width: 3em;
+}
+.sidebar {
+    position: relative;
+    width: 100%;
+    min-width: 290px;
+    min-height: fit-content;
+    box-sizing: border-box;
+    gap: 2em;
+    padding: 1em;
+    transition: 0.3s margin-left;
+}
+.sidebar.active {
+    margin-left: 0px;
+}
+.sidebar .nav, .sidebar .nav-container {
+    gap: 0.75em;
+}
+.sidebar hr {
+    width: 100%;
+    border-color: white;
+}
+.sidebar .nav-link {
+    display: flex;
+    color: white;
+    min-height: 3em;
+    width: -webkit-fill-available;
+    border-radius: 8px;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 500;
+}
+.sidebar .nav-link.active, .sidebar .nav-link:hover {
+    color: black;
+    background-color: white;
+}
+
+.sidebar.active #sidebar-toggler {
+    right: -2.5em;
+}
+.sidebar.active #sidebar-toggler > i{
+    transform: rotate(0deg);
+}
+#sidebar-toggler {
+    position: absolute;
+    right: -1.25em;
+    border-width: 0.1em;
+    border-color: #001B36;
+    color: var(--bg-institucional);
+    background-color: white;
+    border-style: solid;
+    border-radius: 100%;
+    width: 2.5em;
+    height: 2.5em;
+    transition: 0.3s right;
+}
+#sidebar-toggler > i {
+    transition: 0.2s transform;
+    transform: rotate(180deg);
+}
+
+.account-link {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+.account-img {
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: white;
+}
+.account-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.account-role {
+    font-size: 0.75em;
+    font-weight: 300;
+}
+
+@media (min-width: 576px) {
+    .wrapper {
+        flex-direction: row;
+    }
+    .sidebar {
+        width: 290px;
+        margin-left: 0px;
+        padding: 2em;
+    }
+    .sidebar.active {
+        margin-left: -290px;
+    }
+    .brand > img {
+        width: 7em;
+    }
+    #sidebar-content.collapse {
+        display: block;
+    }
+}
+@media (min-width: 1600px) {
+    .sidebar {
+        width: 380px;
+        margin-left: 0px;
+    }
+}
+
+/*REST CSS*/
+
+/*MODAL*/
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+    border-style: none;
+    width: 20px;
+    align-items: center;
+}
+
+/*Perfil Extra*/
+
+.giga{
+    display: flex;
+    align-items: center;
+}
+
+.container-name-giga{
+    padding-left: 20px;
+}
+
+img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.perfil-datos-generales{
+    width: 35rem;
+}
+
+.container-perfil-general{
+  align-items: center;
+  justify-content: center;
+}
+
+#myInput1{
+    width: 15.5rem;
+}
+
+main{
+    align-items: center;
+    justify-content: center;
+}
+
+.button-edit-perfil{
+    background-color: #105dfb;
+    color: #f0f0f0;
+    border-style: none;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.button-log-out{
+    background-color: #f0f0f0;
+    color: #3b3b3d;
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+}
+
+.container{
+    padding: 0;
+}
+
+.container-perfil-general{
+    padding-left: 1rem;
+}
+
+
+h3, h5 {
+    color: #000000;
+    font-weight: bold;
+}
+
+.button-perfil{
+    display: flex;
+}
+
+.btn-1{
+    margin-right: 1rem;
+}
