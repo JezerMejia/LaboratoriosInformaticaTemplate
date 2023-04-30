@@ -119,47 +119,158 @@
         <main class="container p-5 h-100">
           <h2>Dashboard</h2>
 
-          <div
-            class="card border-0 rounded-xl shadow p-3 d-flex align-items-center"
-          >
-            <p>Card con sombra</p>
-            <div
-              class="card border border-dark rounded-xl p-3 d-flex align-items-center bg-white"
-            >
-              <p>Card con bordes</p>
-              <p>Puede estar dentro de una card con sombra</p>
+          <div class="row no-gutters justify-content-between">
+            <div class="col-lg-6 mb-lg-0 mb-3">
+              <div
+                class="card gap-3 mr-lg-3 h-100 border-0 rounded-xl shadow p-4 d-flex align-items-center"
+              >
+                <h5 class="font-weight-bold">Reservaciones en curso</h5>
+
+                <!-- Esta es una solicitud -->
+                <div
+                  class="card border border-dark rounded-xl p-3 row row-cols-2 flex-row bg-white w-100"
+                >
+                  <div class="col px-0">
+                    <p class="font-weight-bold mb-1">Juancito</p>
+                    <p class="font-size-sm mb-1">Laboratorio A</p>
+                    <p class="font-size-sm mb-1">Computadora 2A</p>
+                    <p class="font-size-sm mb-1">12:40PM - 01:30PM</p>
+                  </div>
+
+                  <div
+                    class="col px-0 d-flex flex-column justify-content-between align-items-end text-right"
+                  >
+                    <p class="font-weight-bold mb-1">Por terminar</p>
+                    <p class="font-size-sm mb-1">Tiempo restante: 15 min</p>
+                    <button
+                      class="btn btn-danger"
+                      data-toggle="modal"
+                      data-target="#checkOut"
+                    >
+                      Check out
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Esta es una solicitud -->
+                <div
+                  class="card border border-dark rounded-xl p-3 row row-cols-2 flex-row bg-white w-100"
+                >
+                  <div class="col px-0">
+                    <p class="font-weight-bold mb-1">Esteman</p>
+                    <p class="font-size-sm mb-1">Laboratorio B</p>
+                    <p class="font-size-sm mb-1">Computadora 3B</p>
+                    <p class="font-size-sm mb-1">01:00PM - 02:30PM</p>
+                  </div>
+
+                  <div
+                    class="col px-0 d-flex flex-column justify-content-between align-items-end text-right"
+                  >
+                    <p class="font-weight-bold mb-1">Por terminar</p>
+                    <p class="font-size-sm mb-1">Tiempo restante: 35 min</p>
+                    <button
+                      class="btn btn-danger"
+                      data-toggle="modal"
+                      data-target="#checkOut"
+                    >
+                      Check out
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Esta es una solicitud -->
+                <div
+                  class="card border border-dark rounded-xl p-3 row row-cols-2 flex-row bg-white w-100"
+                >
+                  <div class="col px-0">
+                    <p class="font-weight-bold mb-1">María</p>
+                    <p class="font-size-sm mb-1">Laboratorio B</p>
+                    <p class="font-size-sm mb-1">Computadora 3B</p>
+                    <p class="font-size-sm mb-1">02:45PM - 03:30PM</p>
+                  </div>
+
+                  <div
+                    class="col px-0 d-flex flex-column justify-content-between align-items-end text-right"
+                  >
+                    <p class="font-weight-bold mb-1">Por iniciar</p>
+                    <p class="font-size-sm mb-1">Tiempo restante: 35 min</p>
+                    <button
+                      class="btn btn-primary"
+                      data-toggle="modal"
+                      data-target="#checkIn"
+                    >
+                      Check in
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <hr class="m-4" />
-
-          <div
-            class="card border border-secondary rounded-xl p-3 d-flex align-items-center bg-white"
-          >
-            <p>Card con bordes</p>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-toggle="modal"
-              data-target="#exampleModal"
-            >
-              Añadir carrera
-            </button>
+            <div class="col-lg-6">
+              <div
+                class="card ml-lg-3 h-100 border border-secondary rounded-xl p-3 d-flex align-items-center bg-white"
+              >
+                <p>Card con bordes</p>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
+                  Añadir carrera
+                </button>
+              </div>
+            </div>
           </div>
         </main>
       </div>
 
-      <div class="modal fade" tabindex="-1" id="exampleModal">
+      <!-- Modal del checkIn -->
+      <div class="modal fade" tabindex="-1" id="checkIn">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
           <div class="modal-content rounded-xl">
             <div class="modal-header">
-              <h5 class="modal-title">Añadir carrera</h5>
+              <h5 class="modal-title">Check in</h5>
             </div>
             <div class="modal-body">
-              <p>Aquí iría el formulario.</p>
+              <p>
+                Al continuar, marcarás que el estudiante ha llegado al
+                laboratorio.
+              </p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary px-5">Añadir</button>
+              <button type="button" class="btn btn-primary px-5">
+                Registrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal del checkOut -->
+      <div class="modal fade" tabindex="-1" id="checkOut">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content rounded-xl">
+            <div class="modal-header">
+              <h5 class="modal-title">Check out</h5>
+            </div>
+            <div class="modal-body">
+              <p>
+                Al continuar, marcarás que el estudiante ha salido del
+                laboratorio y, por tanto, se finaliza la solicitud.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger px-5">
+                Registrar
+              </button>
               <button
                 type="button"
                 class="btn btn-secondary"
