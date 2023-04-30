@@ -115,7 +115,7 @@ html, body {
     font-weight: 300;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 769px) {
     .wrapper {
         flex-direction: row;
     }
@@ -134,6 +134,7 @@ html, body {
         display: block;
     }
 }
+
 @media (min-width: 1600px) {
     .sidebar {
         width: 380px;
@@ -158,6 +159,7 @@ html, body {
     border-style: none;
     width: 100px;
     height: 35px;
+    font-weight: bold;
 }
 
 .accept{
@@ -166,6 +168,7 @@ html, body {
     border-style: none;
     width: 100px;
     height: 35px;
+    font-weight: bold;
 }
 
 .nav-top {
@@ -181,12 +184,12 @@ html, body {
 
 .all:hover{
     background-color: #3b3a3d21;
-    font-weight: bold;
+    border-radius: 8px;
 }
 
 .accept:hover{
     background-color: #3b3a3d21;
-    font-weight: bold;
+    border-radius: 8px;
 }
 
 .table th {
