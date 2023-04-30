@@ -110,21 +110,21 @@
                 <div class="all-spinners-container">
                     <div class="spinners-container">
                         <div class="spinner">
-                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('start-hour')"></i>
-                            <input type="text" class="border form-control rounded shadow-none start-hour" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('start-hour', 'ddlAmPmEntrada')"></i>
+                            <input type="text" class="border form-control rounded shadow-none start-hour" min="0" max="12" maxlength="2" pattern="[0-9]*" value="12"
                                    oninput="validarNumeros(this)">
                             <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('start-hour')"></i>
                         </div>
                         <span class="spinner-divider">:</span>
                         <div class="spinner">
-                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('start-minutes')"></i>
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('start-minutes', 'ddlAmPmEntrada')"></i>
                             <input type="text" class="border form-control rounded shadow-none start-minutes" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
                                    oninput="validarNumeros(this)">
                             <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('start-minutes')"></i>
                         </div>
 
                         <div class="checkbox--am-pm">
-                            <select class="rounded form-control shadow-none px-1 bg-primary text-white">
+                            <select class="rounded form-control shadow-none px-1 bg-primary text-white" id="ddlAmPmEntrada">
                                 <option selected>AM</option>
                                 <option>PM</option>
                             </select>
@@ -133,21 +133,21 @@
 
                     <div class="spinners-container">
                         <div class="spinner">
-                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('end-hour')"></i>
-                            <input type="text" class="border form-control rounded shadow-none end-hour" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('end-hour', 'ddlAmPmSalida')"></i>
+                            <input type="text" class="border form-control rounded shadow-none end-hour" min="0" max="12" maxlength="2" pattern="[0-9]*" value="12"
                                    oninput="validarNumeros(this)">
                             <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('end-hour')"></i>
                         </div>
                         <span class="spinner-divider">:</span>
                         <div class="spinner">
-                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('end-minutes')"></i>
+                            <i class="fa fa-chevron-up btn--spinner-up"  onclick="spinnerUp('end-minutes', 'ddlAmPmSalida')"></i>
                             <input type="text" class="border form-control rounded shadow-none end-minutes" min="0" max="12" maxlength="2" pattern="[0-9]*" value="00"
                                    oninput="validarNumeros(this)">
                             <i class="fa fa-chevron-down btn--spinner-down" onclick="spinnerDown('end-minutes')"></i>
                         </div>
 
                         <div class="checkbox--am-pm">
-                            <select class="rounded form-control shadow-none px-1 bg-primary text-white" id="ddlAmPm">
+                            <select class="rounded form-control shadow-none px-1 bg-primary text-white" id="ddlAmPmSalida">
                                 <option selected>AM</option>
                                 <option>PM</option>
                             </select>
