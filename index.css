@@ -142,6 +142,10 @@ body {
   border-radius: 0.5rem !important;
 }
 
+.font-size-sm {
+  font-size: 0.875rem;
+}
+
 .modal-backdrop.show {
   opacity: 0.3;
 }
