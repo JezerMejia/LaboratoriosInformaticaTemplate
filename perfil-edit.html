@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="stylesheet" href="/perfil.css" />
+  <link rel="stylesheet" href="/perfil-edit.css" />
   <script src="https://kit.fontawesome.com/a68fa4bab1.js" crossorigin="anonymous"></script>
 
   <!--SearchBar links-->
@@ -126,7 +127,7 @@
     <main class="container p-4">
         <div class="container-perfil-general">
             <div class="title">
-                <h3>Datos Generales -Editar-</h3>
+                <h3>Datos Generales</h3>
               </div>
               <br>
               <div class="giga">
@@ -143,55 +144,69 @@
                 <div class="container">
                     <div class="row">
                       <div class="col-sm">
-                        <h6 class="top-text-inicio">Nombre</h6>
-                        <input type="text" id="myInput" class="form-control mb-3" value="Yamil" disabled />
+                        <h6 class="top-text-inicio">Nombres*</h6>
+                        <input type="text_editar" id="myInput" class="form-control mb-3" value="Yamil" />
                       </div>
                       <div class="col-sm">
-                        <h6 class="top-text-inicio">Apellido</h6>
-                        <input type="text" id="myInput" class="form-control mb-3" value="Guzman" disabled />
+                        <h6 class="top-text-inicio">Apellidos*</h6>
+                        <input type="text_editar" id="myInput" class="form-control mb-3" value="Guzman"  />
                       </div>
                     </div>
                     <div class="row">
                         <div class="col-sm">
-                            <h6 class="top-text-inicio">Fecha de nacimiento</h6>
-                            <input type="text" id="myInput" class="form-control mb-3" value="09/06/1994" disabled />
+                            <h6 class="top-text-inicio">Fecha de nacimiento*</h6>
+                            <input type="date" id="myInput" class="form-control mb-3" value="09/06/1994"  />
                         </div>
                         <div class="col-sm">
-                            <h6 class="top-text-inicio">Telefono</h6>
-                            <input type="text" id="myInput" class="form-control mb-3" value="1212-1212" disabled />
+                            <h6 class="top-text-inicio">Telefono*</h6>
+                            <input type="text_editar" id="myInput" class="form-control mb-3" value="1212-1212"  />
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm">
-                            <h6 class="top-text-inicio">Genero</h6>
-                            <input type="text" id="myInput1" class="form-control mb-3" value="Masculino" disabled />
-                        </div>
-                    </div>
+                    <div class="Select">
+                      <div class="Select-Genero">
+                        <h6>Género*</h6>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="1">Masculino</option>
+                          <option value="2">Femenino</option>
+                          <option value="3">Otro</option>
+                        </select>
+                      </div>
+                      </div>
                 </div>
               </div>
               <br>
               <h5 class="h6-title">Datos de la universidad</h5>
               <br>
-              <div class="perfil-datos-universidad">
+              <div class="perfil-datos-generales">
                 <div class="container">
-                    <div class="row">
-                      <div class="col-sm">
-                            <h6 class="top-text-inicio">Carnet</h6>
-                            <input type="text" id="myInput1" class="form-control mb-3" placeholder="Yamil" disabled />
-                      </div>
+                  <div class="row">
+                    <div class="col-sm">
+                        <h6 class="top-text-inicio">Carnet*</h6>
+                        <input type="text_editar" id="myInput" class="form-control mb-3" value="000023418"  />
                     </div>
-                    <div class="row">
-                        <div class="col-sm">
-                            <h6 class="top-text-inicio">Correo</h6>
-                            <input type="text" id="myInput1" class="form-control mb-3" value="1212-1212" disabled />
-                        </div>
+                    <div class="col-sm">
+                        <h6 class="top-text-inicio">Correo*</h6>
+                        <input type="email" id="myInput" class="form-control mb-3" value="yamil.guzman@doc.uca.edu.ni"  />
                     </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <h6 class="top-text-inicio">Contraseña*</h6>
+                    <input type="password" id="myInput" class="form-control mb-3" placeholder="********" />
+                    <p><small>Usa una contraseña segura</small></p>
+                  </div>
+                  <div class="col-sm">
+                    <h6 class="top-text-inicio">Repetir contraseña*</h6>
+                    <input type="password" id="myInput" class="form-control mb-3" placeholder="********"  />
+                  </div>
+                </div>
+
                 </div>
               </div>
               <br>
               <div class="button-perfil">
                 <div class="btn-1">
-                    <button class="button-edit-perfil">Editar Perfil</button>
+                    <button class="button-edit-perfil">Guardar cambios</button>
                 </div>
                 <div>
                     <button class="button-log-out">Cerrar sesion</button>
