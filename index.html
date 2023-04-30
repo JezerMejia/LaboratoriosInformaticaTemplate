@@ -136,8 +136,39 @@
             class="card border border-secondary rounded-xl p-3 d-flex align-items-center bg-white"
           >
             <p>Card con bordes</p>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
+              Añadir carrera
+            </button>
           </div>
         </main>
+      </div>
+
+      <div class="modal fade" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content rounded-xl">
+            <div class="modal-header">
+              <h5 class="modal-title">Añadir carrera</h5>
+            </div>
+            <div class="modal-body">
+              <p>Aquí iría el formulario.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary px-5">Añadir</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
