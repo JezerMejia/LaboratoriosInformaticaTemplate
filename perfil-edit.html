@@ -128,16 +128,20 @@
         <div class="container-perfil-general">
             <div class="title">
                 <h3>Datos Generales</h3>
-              </div>
+            </div>
               <br>
               <div class="giga">
-                <div>
-                    <img src="/assets/chad.png" alt="giga">
+                <div class="test">
+                    <img src="/assets/chad.png" id="photo" alt="giga">
                 </div>
                 <div class="container-name-giga">
                     <h4>Yamil Guzman</h4>
                     <h6>Coordinador</h6>
                 </div>
+              </div>
+              <br>
+              <div>
+                <input type="file" id="file">
               </div>
               <br>
               <div class="perfil-datos-generales">
@@ -159,7 +163,7 @@
                         </div>
                         <div class="col-sm">
                             <h6 class="top-text-inicio">Telefono*</h6>
-                            <input type="text_editar" id="myInput" class="form-control mb-3" value="1212-1212"  />
+                            <input type="tel" id="myInput" class="form-control mb-3" value="1212-1212"  />
                         </div>
                     </div>
                     <div class="Select">
@@ -472,6 +476,37 @@
   	if (x < 10) x = '0' + x;
 	  $(this).val(x);
     });
+  </script>
+
+  <script>
+        const imgDiv = document.querySelector('.test')
+        const img = document.querySelector('#photo')
+        const file = document.querySelector('#file')
+
+        file.addEventListener('change', function () {
+            //this refers to file
+            const choosedFile = this.files[0];
+
+            if (choosedFile) {
+
+                const reader = new FileReader(); //FileReader is a predefined function of JS
+
+                reader.addEventListener('load', function () {
+                    img.setAttribute('src', reader.result);
+                });
+
+                reader.readAsDataURL(choosedFile);
+
+                //Allright is done
+
+                //please like the video
+                //comment if have any issue related to vide & also rate my work in comment section
+
+                //And aslo please subscribe for more tutorial like this
+
+                //thanks for watching
+            }
+        });
   </script>
 
 

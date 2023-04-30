@@ -38,3 +38,15 @@ select {
     align-items: center;
   }
 
+  select {
+    border: 2px solid #848188;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    color: #848188;
+
+    padding: 10px;
+  }
+
