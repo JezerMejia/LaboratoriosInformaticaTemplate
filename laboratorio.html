@@ -123,25 +123,88 @@
             </div>
             <!--/Top page Buttons-->
 
-            <!--Datepicker-->
+            <!--Date&Time picker-->
             <div class="container-fluid">
-                <form class="pt-4 pb-2">
-                    <div class="row form-group">
-                        <label for="date" class="col-form-label">Date:</label>
-                        <div class="col-sm-3">
-                            <div class="input-group date" id="datepicker">
-                                <input type="text" class="form-control">
-                                <span class="input-group-append">
-                                    <span class="input-group-text bg-white">
-                                        <i class="fa fa-calendar"></i>
-                                    </span>
+                <div class="form-group form-inline">
+                    <label for="datepicker" class="mr-2">Date:</label>
+                    <input type="text" class="form-control mr-2" id="datepicker">
+                    <!--/Datepicker-->
+
+                    <label for="timePicker-final"  class="mr-2">Hora:</label>
+                     <!--Time Picker-->
+                    <div class="timepicker-container">
+
+                        <div class="timePicker-inicio">
+
+                            <div class="first-picker">
+                                <span class="up-arrow">
+                                    <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
+                                </span>
+                                <div class="container-input">
+                                    <input type="number" class="input-picker" id="quantity" value="01" min="1" max="12">
+                                </div>
+                                <span class="down-arrow">
+                                    <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
                                 </span>
                             </div>
+
+                            <span>:</span>
+
+                            <div class="last-picker">
+                                <span class="up-arrow-l">
+                                    <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
+                                </span>
+                                <div class="container-input">
+                                    <input type="number" class="input-picker" id="quantity-l" value="00" min="0"
+                                        max="59">
+                                </div>
+                                <span class="down-arrow-l">
+                                    <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
+                                </span>
+                            </div>
+
+                            <button class="btn-time-picker-inicio">AM</button>
+
+                        </div>
+
+                        <div class="timePicker-final">
+
+                            <div class="first-picker">
+                                <span class="up-arrow-f">
+                                    <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
+                                </span>
+                                <div class="container-input">
+                                    <input type="number" class="input-picker" id="quantity-f" value="01" min="1"
+                                        max="12">
+                                </div>
+                                <span class="down-arrow-f">
+                                    <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
+                                </span>
+                            </div>
+
+                            <span>:</span>
+
+                            <div class="last-picker">
+                                <span class="up-arrow-f-l">
+                                    <i class="fa-solid fa-chevron-up" style="color: #848188"></i>
+                                </span>
+                                <div class="container-input">
+                                    <input type="number" class="input-picker" id="quantity-f-l" value="00" min="0"
+                                        max="59">
+                                </div>
+                                <span class="down-arrow-f-l">
+                                    <i class="fa-solid fa-chevron-down" style="color: #848188"></i>
+                                </span>
+                            </div>
+
+                            <button class="btn-time-picker-final">AM</button>
                         </div>
                     </div>
-                </form>
+                    <!--/Time Picker-->
+                </div>
+                <!--/Form Group-->
             </div>
-            <!--/Datepicker-->
+            <!--Date&Time picker-->
 
             <!--Row for Labs area-->
             <div class="row mb-3">
@@ -316,7 +379,7 @@
                                     </div>
                                     <button type="button" class="btn btn-primary">Modificar</button>
                                     <button type="button" class="btn btn-secondary">Clonar</button>
-                                    <button type="button" class="btn-danger">Eliminar</button>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
                                 </div>
                                 <!--/ButtonsCont-->
                             </div>
@@ -352,7 +415,170 @@
         });
     </script>
     <!--/Date picker script-->
+    <!--TimePicker-inicio-->
 
+    <script>
+        const upButtonI = document.querySelector('.up-arrow');
+        const downButtonI = document.querySelector('.down-arrow');
+        const quantityInputI = document.querySelector('#quantity');
+        const amPmButton = document.querySelector('.btn-time-picker-inicio');
+        let amPmState = 'AM';
+
+        function updateQuantityInput(amount) {
+            // Actualiza la cantidad en el input de cantidad y cambia de PM a AM si es necesario
+            let newQuantity = ((parseInt(quantityInputI.value) + amount - 1 + 12) % 12) + 1;
+            console.log(newQuantity);
+            quantityInputI.value = (newQuantity < 10 ? '0' : '') + newQuantity;
+
+            if (newQuantity === 12) {
+                amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
+                amPmButton.innerText = amPmState;
+            }
+        }
+
+        // Agrega un evento de clic a los botones de incremento y decremento
+        upButtonI.addEventListener('click', () => {
+            updateQuantityInput(1);
+        });
+        downButtonI.addEventListener('click', () => {
+            updateQuantityInput(-1);
+        });
+    </script>
+
+    <script>
+        const upButton = document.querySelector('.up-arrow-l');
+        const downButton = document.querySelector('.down-arrow-l');
+        const quantityInput = document.querySelector('#quantity-l');
+        const quantityInput3 = document.querySelector('#quantity');
+        const amPmButton1 = document.querySelector('.btn-time-picker-inicio');
+        let amPmState1 = 'AM';
+
+        function updateQuantity(delta) {
+            const currentValue = parseInt(quantityInput.value);
+            const newValue = (currentValue + delta + 60) % 60;
+            console.log(newValue);
+
+            quantityInput.value = newValue < 10 ? '0' + newValue : newValue;
+
+            if (newValue === 0) {
+
+                if (delta < 0) {
+                    quantityInput3.value = parseInt(quantityInput3.value) - 1;
+                }
+                if (delta > 0) {
+                    quantityInput3.value = parseInt(quantityInput3.value) + 1;
+                }
+
+                if (parseInt(quantityInput3.value) < 1) {
+                    quantityInput3.value = '12';
+                }
+                if (parseInt(quantityInput3.value) < 10) {
+                    quantityInput3.value = '0' + quantityInput3.value;
+                }
+            } else if (newValue === 45) {
+                quantityInput3.value = (parseInt(quantityInput3.value) - 1 + 11) % 11 + 1;
+                if (parseInt(quantityInput3.value) < 10) {
+                    quantityInput3.value = '0' + quantityInput3.value;
+                }
+            }
+
+            if (quantityInput3.value === '12' && newValue === 0) {
+                amPmState1 = amPmState1 === 'AM' ? 'PM' : 'AM';
+                amPmButton1.innerText = amPmState1;
+            }
+        }
+
+        upButton.addEventListener('click', () => {
+            updateQuantity(15);
+        });
+
+        downButton.addEventListener('click', () => {
+            updateQuantity(-15);
+        });
+    </script>
+
+    <!--TimePicker 2-->
+
+    <script>
+        const upButtonF = document.querySelector('.up-arrow-f');
+        const downButtonF = document.querySelector('.down-arrow-f');
+        const quantityInputF = document.querySelector('#quantity-f');
+        const amPmButtonF = document.querySelector('.btn-time-picker-final');
+        let amPmStateF = 'AM';
+
+        function updateQuantityInput2(amount) {
+            // Actualiza la cantidad en el input de cantidad y cambia de PM a AM si es necesario
+            let newQuantity = ((parseInt(quantityInputF.value) + amount - 1 + 12) % 12) + 1;
+            console.log(newQuantity);
+            quantityInputF.value = (newQuantity < 10 ? '0' : '') + newQuantity;
+
+            if (newQuantity === 12) {
+                amPmStateF = (amPmStateF === 'AM') ? 'PM' : 'AM';
+                amPmButtonF.innerText = amPmStateF;
+            }
+        }
+
+        // Agrega un evento de clic a los botones de incremento y decremento
+        upButtonF.addEventListener('click', () => {
+            updateQuantityInput2(1);
+        });
+        downButtonF.addEventListener('click', () => {
+            updateQuantityInput2(-1);
+        });
+
+    </script>
+
+    <script>
+        const upButtonFL = document.querySelector('.up-arrow-f-l');
+        const downButtonFL = document.querySelector('.down-arrow-f-l');
+        const quantityInputFL = document.querySelector('#quantity-f-l');
+        const quantityInputFF = document.querySelector('#quantity-f');
+        const amPmButtonFL = document.querySelector('.btn-time-picker-final');
+        let amPmStateFL = 'AM';
+
+        function updateQuantity2(delta2) {
+            const currentValue = parseInt(quantityInputFL.value);
+            const newValue = (currentValue + delta2 + 60) % 60;
+            console.log(newValue);
+
+            quantityInputFL.value = newValue < 10 ? '0' + newValue : newValue;
+
+            if (newValue === 0) {
+
+                if (delta2 < 0) {
+                    quantityInputFF.value = parseInt(quantityInputFF.value) - 1;
+                }
+                if (delta2 > 0) {
+                    quantityInputFF.value = parseInt(quantityInputFF.value) + 1;
+                }
+
+                if (parseInt(quantityInputFF.value) < 1) {
+                    quantityInputFF.value = '12';
+                }
+                if (parseInt(quantityInputFF.value) < 10) {
+                    quantityInputFF.value = '0' + quantityInputFF.value;
+                }
+            } else if (newValue === 45) {
+                quantityInputFF.value = (parseInt(quantityInputFF.value) - 1 + 11) % 11 + 1;
+                if (parseInt(quantityInputFF.value) < 10) {
+                    quantityInputFF.value = '0' + quantityInputFF.value;
+                }
+            }
+
+            if (quantityInputFF.value === '12' && newValue === 0) {
+                amPmStateFL = amPmStateFL === 'AM' ? 'PM' : 'AM';
+                amPmButtonFL.innerText = amPmStateFL;
+            }
+        }
+
+        upButtonFL.addEventListener('click', () => {
+            updateQuantity2(15);
+        });
+
+        downButtonFL.addEventListener('click', () => {
+            updateQuantity2(-15);
+        });
+    </script>
 </body>
 
 </html>
