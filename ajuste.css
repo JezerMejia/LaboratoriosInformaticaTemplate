@@ -1,0 +1,11 @@
+.input-container{
+width: 150px;
+   
+}
+label{
+    min-width: 150px;
+    max-width: 500px;
+}
+.ExplicacionDeAjuste{
+    color: #939196 !important;
+}
