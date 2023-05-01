@@ -352,24 +352,7 @@
     </div>
   </div>
 
-  <!--Búsqueda por nombre de Laboratorio-->
-  <script>
-    $(document).ready(function () {
-      $("#myInput").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $(".card").each(function (index) {
-          var card = $(this);
-          var name = card.find(".card-lab").text().toLowerCase();
-          if (name.indexOf(value) !== -1) {
-            card.show();
-          } else {
-            card.hide();
-          }
-        });
-      });
-    });
-  </script>
-
+<script src="scripts/laboratorio.js"></script>
 </body>
 
 </html>
