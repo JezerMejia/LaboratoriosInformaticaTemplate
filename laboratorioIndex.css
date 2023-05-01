@@ -190,15 +190,33 @@ body {
 }
 
 .nav-top {
-    margin: auto auto;
     display: flex;
-    justify-content: space-between;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
 }
 
 .nav-top .nav-item {
     gap: 1rem;
     display: flex;
-}
+    margin-bottom: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .nav-top {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .nav-item {
+            width: 100%;
+            text-align: center;
+        }
+    
+        .input-group {
+            width: 100%;
+        }
+  }
 
 .all:hover {
     background-color: #3b3a3d21;
@@ -231,86 +249,6 @@ body {
     border-radius: 6px;
 }
 
-/* Time Picker */
-
-.timePicker-inicio {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.timePicker-final {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.container-laba-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #848188;
-    width: fit-content;
-    padding: 5px;
-    border-radius: 6px;
-}
-
-.input-picker {
-    display: block;
-    white-space: nowrap;
-    color: #848188;
-}
-
-
-.first-picker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.last-picker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.btn-time-picker-inicio {
-    background-color: #105dfb;
-    color: white;
-    width: 45px;
-    height: 30px;
-    border-radius: 6px;
-}
-
-.btn-time-picker-final {
-    background-color: #105dfb;
-    color: white;
-    width: 45px;
-    height: 30px;
-    border-radius: 6px;
-}
-
-.timepicker-container-laba {
-    display: flex;
-    gap: 2rem;
-}
-
-select {
-    border: 2px solid #848188;
-    background-color: #fff;
-    font-family: Arial, sans-serif;
-    width: 200px;
-    height: 40px;
-    border-radius: 6px;
-    color: #848188;
-
-    padding: 10px;
-}
-
 .text-top-solicitud {
     display: flex;
     gap: 7rem;
@@ -324,29 +262,23 @@ select {
 
 
 .card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     display: inline-block;
     margin-right: 1%;
     vertical-align: top;
-    width: 40%;
-}
+    width: 30%;
+    }
 
 
 
 .card-lab {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .cant-computer {
-    text-align: left;
+    display: inline-block;
     font-size: 80%;
-    margin-left: 23%;
+    margin-left: 20%;
 }
 
 .status {
@@ -357,18 +289,20 @@ select {
     width: 25%;
     margin-left: 1%;
     font-size: 80%;
+    
 }
+
 
 .grid-container-laba {
     border-radius: 10px;
     border-color: #001B36;
     border-style: solid;
     border-width: 1px;
-    padding: 30px;
+    padding: 25px;
     margin: 10px;
     display: grid;
-    grid-template-rows: repeat(3, 80px);
-    column-gap: 20px;
+    grid-template-rows: repeat(3, 70px);
+        column-gap: 18px;
 }
 
 .grid-container-labb {
@@ -376,11 +310,11 @@ select {
     border-color: #001B36;
     border-style: solid;
     border-width: 1px;
-    padding: 30px;
-    margin: 10px;
+    padding: 25px;
+        margin: 15px 30px 0 30px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 50px);
+    grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 40px);
 }
 
 .grid-container-labc {
@@ -388,43 +322,25 @@ select {
     border-color: #001B36;
     border-style: solid;
     border-width: 1px;
-    padding: 30px;
+    padding: 25px;
     margin: 10px;
     display: grid;
-    grid-template-rows: repeat(3, 80px);
-    column-gap: 20px;
+    grid-template-rows: repeat(3, 70px);
+        column-gap: 18px;
 }
 
 
-.computer-container-laba {
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.computer-container-laba i {
-    color: #333;
-}
-
-.computer-container-labb {
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.computer-container-labb i {
-    color: #333;
-}
-
+.computer-container-laba,
+.computer-container-labb,
 .computer-container-labc {
-    font-size: 25px;
+    font-size: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.computer-container-laba i,
+.computer-container-labb i,
 .computer-container-labc i {
     color: #333;
 }
@@ -523,6 +439,59 @@ select {
     grid-column: 7;
 }
 
+/*Laboratorio B*/
+/*Lado Izquierdo*/
+.computer-container-labb:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.computer-container-labb:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.computer-container-labb:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.computer-container-labb:nth-child(4) {
+    grid-row: 4;
+    grid-column: 1;
+}
+
+.computer-container-labb:nth-child(5) {
+    grid-row: 5;
+    grid-column: 1;
+}
+
+/*Lado Derecho*/
+
+.computer-container-labb:nth-child(6) {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.computer-container-labb:nth-child(7) {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.computer-container-labb:nth-child(8) {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.computer-container-labb:nth-child(9) {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+.computer-container-labb:nth-child(10) {
+    grid-row: 5;
+    grid-column: 2;
+}
 /*Laboratorio C*/
 /*Lado Izquierdo*/
 .computer-container-labc:nth-child(1) {
@@ -606,4 +575,44 @@ select {
 .computer-container-labc:nth-child(16) {
     grid-row: 3;
     grid-column: 7;
+}
+@media only screen and (max-width: 768px) {
+    .card {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: auto;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container-labb {
+        grid-template-columns: repeat(4, 40px);
+    }
+
+    .computer-container-labb:nth-child(6) {
+        grid-row: 1;
+        grid-column: 4;
+    }
+
+    .computer-container-labb:nth-child(7) {
+        grid-row: 2;
+        grid-column: 4;
+    }
+
+    .computer-container-labb:nth-child(8) {
+        grid-row: 3;
+        grid-column: 4;
+    }
+
+    .computer-container-labb:nth-child(9) {
+        grid-row: 4;
+        grid-column: 4;
+    }
+
+    .computer-container-labb:nth-child(10) {
+        grid-row: 5;
+        grid-column: 4;
+    }
 }
