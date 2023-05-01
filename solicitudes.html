@@ -90,7 +90,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/usuarios">
+              <a class="nav-link" href="/usuarios.html">
                 <i class="fa-solid fa-user fa-lg"></i>
                 Usuarios
               </a>
@@ -136,50 +136,64 @@
           <input type="text" id="myInput" class="form-control mb-3" placeholder="Search..." />
         </div>
       </div>
-      <table id="dtTable" class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Estudiante</th>
-            <th scope="col">Laboratorio</th>
-            <th scope="col">Computadora</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Hora Inicio</th>
-            <th scope="col">Hora Fin</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Juan Perez</td>
-            <td>LAB B</td>
-            <td>4B</td>
-            <td>2023-03-20</td>
-            <td>3:30 PM</td>
-            <td>5:00 PM</td>
-          </tr>
-          <!---->
-          <tr data-filter-item="Esteman">
-            <th scope="row">2</th>
-            <td>Esteman</td>
-            <td>LAB B</td>
-            <td>4B</td>
-            <td>2023-03-20</td>
-            <td>3:50 PM</td>
-            <td>4:30 PM</td>
-          </tr>
-          <!---->
-          <tr>
-            <th scope="row">3</th>
-            <td>Residente</td>
-            <td>LAB A</td>
-            <td>4D</td>
-            <td>2023-03-20</td>
-            <td>4:00 PM</td>
-            <td>5:00 PM</td>
-          </tr>
-        </tbody>
-      </table>
+
+      <div class="card">
+        <div class="card-body">
+          <table id="dtTable" class="table no-border-top">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Estudiante</th>
+                <th scope="col">Laboratorio</th>
+                <th scope="col">Computadora</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora Inicio</th>
+                <th scope="col">Hora Fin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Juan Perez</td>
+                <td>LAB B</td>
+                <td>4B</td>
+                <td>2023-03-20</td>
+                <td>3:30 PM</td>
+                <td>5:00 PM</td>
+              </tr>
+              <!---->
+              <tr data-filter-item="Esteman">
+                <th scope="row">2</th>
+                <td>Esteman</td>
+                <td>LAB B</td>
+                <td>4B</td>
+                <td>2023-03-20</td>
+                <td>3:50 PM</td>
+                <td>4:30 PM</td>
+              </tr>
+              <!---->
+              <tr>
+                <th scope="row">3</th>
+                <td>Residente</td>
+                <td>LAB A</td>
+                <td>4D</td>
+                <td>2023-03-20</td>
+                <td>4:00 PM</td>
+                <td>5:00 PM</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Calle 13</td>
+                <td>LAB A</td>
+                <td>4D</td>
+                <td>2023-03-20</td>
+                <td>4:00 PM</td>
+                <td>5:00 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -298,272 +312,7 @@
     </main>
   </div>
 
-  <script>
-    $(document).ready(function () {
-      $("#myInput").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $("#dtTable tbody tr").each(function (index) {
-          var row = $(this);
-          var text = row.text().toLowerCase();
-          if (text.indexOf(value) !== -1) {
-            row.show();
-          } else {
-            row.hide();
-          }
-        });
-      });
-    });
-  </script>
-
-  <script>
-    $(document).ready(function () {
-      $('button[data-filter]').on('click', function () {
-        var filter = $(this).data('filter');
-        $('tbody tr').each(function () {
-          var item = $(this).data('filter-item');
-          if (filter === 'all' || filter === item) {
-            $(this).show();
-          } else {
-            $(this).hide();
-          }
-        });
-      });
-    });
-  </script>
-
-  <script>
-    $(function () {
-      $('#datepicker').datepicker({
-        autoclose: true,
-        format: 'yyyy-mm-dd',
-        todayHighlight: true,
-        orientation: "bottom auto"
-      });
-    });
-  </script>
-
-  <script>
-    $(function () {
-      $('#timepicker').datetimepicker({
-        format: 'LT'
-      });
-    });
-  </script>
-
-  <!--TimePicker-inicio-->
-
-  <script>
-    const upButtonI = document.querySelector('.up-arrow');
-    const downButtonI = document.querySelector('.down-arrow');
-    const quantityInputI = document.querySelector('#quantity');
-    const amPmButton = document.querySelector('.btn-time-picker-inicio');
-    let amPmState = 'AM';
-
-    // Agrega un evento de clic a los botones de incremento y decremento
-    upButtonI.addEventListener('click', () => {
-      quantityInputI.value = (parseInt(quantityInputI.value) % 12) + 1;
-
-      if (parseInt(quantityInputI.value) === 12) {
-        amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
-        amPmButton.innerText = amPmState;
-      }
-
-      if(parseInt(quantityInputI.value) < 10){
-        quantityInputI.value = '0' + quantityInputI.value;
-      }
-    });
-    downButtonI.addEventListener('click', () => {
-      // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
-      if (parseInt(quantityInputI.value) > 0) {
-        quantityInputI.value = (parseInt(quantityInputI.value) - 1 + 13) % 13;
-      } else {
-        quantityInputI.value = 12;
-      }
-
-      if (quantityInputI.value === '12') {
-        amPmState = (amPmState === 'AM') ? 'PM' : 'AM';
-        amPmButton.innerText = amPmState;
-      }
-
-      if(parseInt(quantityInputI.value) < 10){
-        quantityInputI.value = '0' + quantityInputI.value;
-      }
-    });
-  </script>
-
-  <script>
-    const upButton = document.querySelector('.up-arrow-l');
-    const downButton = document.querySelector('.down-arrow-l');
-    const quantityInput = document.querySelector('#quantity-l');
-    const quantityInput3 = document.querySelector('#quantity');
-    const amPmButton1 = document.querySelector('.btn-time-picker-inicio');
-    let amPmState1 = 'AM';
-
-    upButton.addEventListener('click', () => {
-      if (parseInt(quantityInput.value) + 15 > 59) {
-        quantityInput.value = 0;
-      } else {
-        quantityInput.value = (parseInt(quantityInput.value) + 15) % 60;
-      }
-      if (quantityInput.value === '0') {
-        quantityInput3.value = (parseInt(quantityInput3.value) % 12) + 1;
-
-        if(parseInt(quantityInput3.value) < 10){
-        quantityInput3.value = '0' + quantityInput3.value;
-        }
-      }
-
-      if (quantityInput3.value === '12' && quantityInput.value === '0') {
-        amPmState1 = (amPmState1 === 'AM') ? 'PM' : 'AM';
-        amPmButton1.innerText = amPmState1;
-      }
-
-      if(parseInt(quantityInput.value) < 10){
-        quantityInput.value = '0' + quantityInput.value;
-      }
-    });
-    downButton.addEventListener('click', () => {
-      if (parseInt(quantityInput.value) - 15 < 0) {
-        quantityInput.value = 60 - Math.abs(parseInt(quantityInput.value) - 15);
-      } else {
-        quantityInput.value = (parseInt(quantityInput.value) - 15) % 60;
-      }
-      if (quantityInput.value === '45') {
-        quantityInput3.value = (parseInt(quantityInput3.value) - 2 + 12) % 12 + 1;
-        if(parseInt(quantityInput3.value) < 10){
-        quantityInput3.value = '0' + quantityInput3.value;
-        }
-      }
-
-      if (quantityInput3.value === '12' && quantityInput.value === '0') {
-        amPmState1 = (amPmState1 === 'AM') ? 'PM' : 'AM';
-        amPmButton1.innerText = amPmState1;
-      }
-
-      if(parseInt(quantityInput.value) < 10){
-        quantityInput.value = '0' + quantityInput.value;
-      }
-
-    });
-  </script>
-
-  <!--TimePicker 2-->
-
-  <script>
-    const upButtonI2 = document.querySelector('.up-arrow-f');
-    const downButtonI2 = document.querySelector('.down-arrow-f');
-    const quantityInputI2 = document.querySelector('#quantity-f');
-    const amPmButton2 = document.querySelector('.btn-time-picker-final');
-    let amPmState2 = 'AM';
-
-    // Agrega un evento de clic a los botones de incremento y decremento
-    upButtonI2.addEventListener('click', () => {
-      quantityInputI2.value = (parseInt(quantityInputI2.value) % 12) + 1;
-
-      if (parseInt(quantityInputI2.value) === 12) {
-        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-        amPmButton2.innerText = amPmState2;
-      }
-
-      if(parseInt(quantityInputI2.value) < 10){
-        quantityInputI2.value = '0' + quantityInputI2.value;
-      }
-
-    });
-    downButtonI2.addEventListener('click', () => {
-      // Decrementa la cantidad en 1, pero no puede ser menor a 0, y cambia de PM a AM si es necesario
-      if (parseInt(quantityInputI2.value) > 0) {
-        quantityInputI2.value = (parseInt(quantityInputI2.value) - 1 + 13) % 13;
-      } else {
-        quantityInputI2.value = 12;
-      }
-
-      if (quantityInputI2.value === '12') {
-        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-        amPmButton2.innerText = amPmState2;
-      }
-
-      if(parseInt(quantityInputI2.value) < 10){
-        quantityInputI2.value = '0' + quantityInputI2.value;
-      }
-    });
-  </script>
-
-  <script>
-    const upButton2 = document.querySelector('.up-arrow-f-l');
-    const downButton2 = document.querySelector('.down-arrow-f-l');
-    const quantityInput2 = document.querySelector('#quantity-f-l');
-    const quantityInputF3 = document.querySelector('#quantity-f');
-    const amPmButton3 = document.querySelector('.btn-time-picker-final');
-    let amPmState3 = 'AM';
-    
-    upButton2.addEventListener('click', () => {
-      if (parseInt(quantityInput2.value) + 15 > 59) {
-        quantityInput2.value = 0;
-      } else {
-        quantityInput2.value = (parseInt(quantityInput2.value) + 15) % 60;
-      }
-      if (quantityInput2.value === '0') {
-        quantityInputF3.value = (parseInt(quantityInputF3.value) % 12) + 1;
-
-        if(parseInt(quantityInputF3.value) < 10){
-        quantityInputF3.value = '0' + quantityInputF3.value;
-        } 
-      }
-      if (quantityInputF3.value === '12' && quantityInput2.value === '0') {
-        amPmState2 = (amPmState2 === 'AM') ? 'PM' : 'AM';
-        amPmButton2.innerText = amPmState2;
-      }
-
-      if(parseInt(quantityInput2.value) < 10){
-        quantityInput2.value = '0' + quantityInput2.value;
-      }
-
-    });
-    downButton2.addEventListener('click', () => {
-      // Decrementa la cantidad en 15 y reinicia en 45 si es menor a 0
-      if (parseInt(quantityInput2.value) - 15 < 0) {
-        quantityInput2.value = 60 - Math.abs(parseInt(quantityInput2.value) - 15);
-      } else {
-        quantityInput2.value = (parseInt(quantityInput2.value) - 15) % 60;
-      }
-      if (quantityInput2.value === '45') {
-        quantityInputF3.value = (parseInt(quantityInputF3.value) - 2 + 12) % 12 + 1;
-
-        if(parseInt(quantityInputF3.value) < 10){
-        quantityInputF3.value = '0' + quantityInputF3.value;
-        }
-      }
-
-      if (quantityInputF3.value === '12' && quantityInput2 === '00') {
-        amPmState3 = (amPmState3 === 'AM') ? 'PM' : 'AM';
-        amPmButton3.innerText = amPmState3;
-        console.log("Hello")
-      }
-
-      if(parseInt(quantityInput2.value) < 10){
-        quantityInput2.value = '0' + quantityInput2.value;
-      }
-    });
-  </script>
-
-  <!--XD-->
-  <script>
-    $('.input-picker').on('input', function() {
-	  var x = $(this).val();
-  	if (x < 10) x = '0' + x;
-	  $(this).val(x);
-    });
-  </script>
-
-
-  <script>
-    const sidebarToggler = document.querySelector("#sidebar-toggler");
-    sidebarToggler.addEventListener("click", () => {
-      const sidebar = document.querySelector(".sidebar");
-      sidebar.classList.toggle("active");
-    });
-  </script>
+  <script src="./scripts/solicitudes.js" type="text/javascript"></script>
 </body>
 
 </html>
