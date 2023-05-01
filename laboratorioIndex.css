@@ -216,6 +216,9 @@ align-items: center;
         .input-group {
             width: 100%;
         }
+.add {
+    font-size: 80%;
+}
   }
 
 .all:hover {
@@ -576,17 +579,21 @@ align-items: center;
     grid-row: 3;
     grid-column: 7;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px),
+(max-width: 1200px),
+(max-width: 1366px) {
     .card {
         max-width: 100%;
-        margin-right: 0;
+        margin-right: 1;
         margin-bottom: 20px;
         width: auto;
         display: block;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px),
+(max-width: 1200px),
+(max-width: 1366px) {
     .grid-container-labb {
         grid-template-columns: repeat(4, 40px);
     }
@@ -614,5 +621,15 @@ align-items: center;
     .computer-container-labb:nth-child(10) {
         grid-row: 5;
         grid-column: 4;
+    }
+}
+@media (min-width: 1600px) {
+    .sidebar {
+        width: 380px;
+        margin-left: 0px;
+    }
+
+    .sidebar.active {
+        margin-left: -380px;
     }
 }

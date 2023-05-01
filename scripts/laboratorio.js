@@ -44,7 +44,6 @@ function updateQuantityInput(amount) {
   // Actualiza la cantidad en el input de cantidad y cambia de PM a AM si es necesario
   let newQuantity =
     ((parseInt(quantityInputI.value) + amount - 1 + 12) % 12) + 1;
-  console.log(newQuantity);
   quantityInputI.value = (newQuantity < 10 ? "0" : "") + newQuantity;
 
   if (newQuantity === 12) {
@@ -71,7 +70,6 @@ let amPmState1 = "AM";
 function updateQuantity(delta) {
   const currentValue = parseInt(quantityInput.value);
   const newValue = (currentValue + delta + 60) % 60;
-  console.log(newValue);
 
   quantityInput.value = newValue < 10 ? "0" + newValue : newValue;
 
@@ -122,7 +120,6 @@ function updateQuantityInput2(amount) {
   // Actualiza la cantidad en el input de cantidad y cambia de PM a AM si es necesario
   let newQuantity =
     ((parseInt(quantityInputF.value) + amount - 1 + 12) % 12) + 1;
-  console.log(newQuantity);
   quantityInputF.value = (newQuantity < 10 ? "0" : "") + newQuantity;
 
   if (newQuantity === 12) {
@@ -149,7 +146,6 @@ let amPmStateFL = "AM";
 function updateQuantity2(delta2) {
   const currentValue = parseInt(quantityInputFL.value);
   const newValue = (currentValue + delta2 + 60) % 60;
-  console.log(newValue);
 
   quantityInputFL.value = newValue < 10 ? "0" + newValue : newValue;
 
