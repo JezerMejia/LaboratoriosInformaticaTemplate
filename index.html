@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -101,7 +102,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link account-link" href="/cuenta.html">
+                <a class="nav-link account-link" href="/perfil.html">
                   <img src="/assets/chad.png" class="account-img" alt="Chad" />
                   <div class="account-details">
                     <span class="account-name">Yamil Guzmán</span>
@@ -172,12 +173,6 @@
       </div>
     </div>
 
-    <script>
-      const sidebarToggler = document.querySelector("#sidebar-toggler");
-      sidebarToggler.addEventListener("click", () => {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.classList.toggle("active");
-      });
-    </script>
+    <script src="./scripts/index.js" type="text/javascript"></script>
   </body>
 </html>
