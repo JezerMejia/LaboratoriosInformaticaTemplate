@@ -273,3 +273,37 @@ select {
 .top-text-inicio {
   padding-left: 1rem;
 }
+/*Diseño Modals Software*/
+
+input[type="file"] {
+  display: none;
+}
+
+#preview-containerAdd,
+#preview-containerEdit {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preview-containerAdd img,
+#preview-containerEdit img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#preview-containerAdd label,
+#preview-containerEdit label {
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  color: #105dfb;
+}
