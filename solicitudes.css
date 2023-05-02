@@ -131,6 +131,12 @@ body {
     font-weight: 300;
 }
 
+@media(max-width: 768px){
+    .card-body{
+        overflow-x: scroll;
+    }
+}
+
 @media (min-width: 769px) {
     .wrapper {
         flex-direction: row;
@@ -157,6 +163,8 @@ body {
     .nav-top {
         justify-content: center;
     }
+
+
 }
 
 @media (min-width: 1600px) {
@@ -184,6 +192,7 @@ body {
     width: 100px;
     height: 35px;
     font-weight: bold;
+    border-radius: 8px;
 }
 
 .accept {
@@ -193,6 +202,7 @@ body {
     width: 100px;
     height: 35px;
     font-weight: bold;
+    border-radius: 8px;
 }
 
 .nav-top {
@@ -214,7 +224,10 @@ body {
 
 .accept:hover {
     background-color: #3b3a3d21;
-    border-radius: 8px;
+}
+
+.btn-activo{
+    background-color: #3b3a3d21;
 }
 
 .table th {
@@ -225,15 +238,23 @@ body {
     text-align: center;
 }
 
-.table th:last-child{
-
-}
-
 .card {
     border-radius: 0.5rem !important;
 }
 
+.menu-container{
+    top: 10px;
+    right: 35px;
+    min-width: 100px !important;
+}
 
+.menu-container{
+    z-index: 1;
+}
+
+.menu-container button:hover{
+    background-color: #3b3a3d21 !important;
+}
 
 /*MODAL*/
 
@@ -341,7 +362,6 @@ select {
     height: 40px;
     border-radius: 6px;
     color: #848188;
-
     padding: 10px;
 }
 

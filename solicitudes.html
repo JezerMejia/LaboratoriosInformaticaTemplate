@@ -129,8 +129,8 @@
       <h2>Solicitudes</h2>
       <div class="nav-top my-4 flex-wrap">
         <div class="nav-item">
-          <button class="all" data-filter="all">Todo</button>
-          <button class="accept" data-filter="Esteman">Aceptados</button>
+          <button class="all btn-activo" data-filter="all" onclick="CambiarBotonActivo('all')">Todo</button>
+          <button class="accept" data-filter="Esteman" onclick="CambiarBotonActivo('accept')">Aceptados</button>
         </div>
         <div class="nav-item">
           <button type="button" class="add border-0" data-toggle="modal" data-target="#myModal">
@@ -146,7 +146,7 @@
       </div>
 
       <div class="card col-12">
-        <div class="card-body overflow-auto">
+        <div class="card-body overflow-x-auto">
           <table id="dtTable" class="table no-border-top">
             <thead>
               <tr>
@@ -167,7 +167,10 @@
                 <td>4B</td>
                 <td>2023-03-20</td>
                 <td>3:30 PM</td>
-                <td class="d-flex justify-content-between align-items-center ml-3">5:00 PM <i class="fa fa-ellipsis-h element-option"></i></td>
+                <td class="d-flex justify-content-between align-items-center position-relative ultimo-elemento-1">
+                  5:00 PM
+                  <i class="fa fa-ellipsis-h element-option ml-3" onclick="MostrarMenuOpciones('ultimo-elemento-1')"></i>
+                </td>
 
               </tr>
               <!---->
@@ -178,7 +181,10 @@
                 <td>4B</td>
                 <td>2023-03-20</td>
                 <td>3:50 PM</td>
-                <td class="d-flex justify-content-between">4:30 PM <i class="fa fa-ellipsis-h element-option"></i></td>
+                <td class="d-flex justify-content-between position-relative ultimo-elemento-2">
+                  4:30 PM
+                  <i class="fa fa-ellipsis-h element-option ml-3" onclick="MostrarMenuOpciones('ultimo-elemento-2')"></i>
+                </td>
               </tr>
               <!---->
               <tr>
@@ -188,7 +194,10 @@
                 <td>4D</td>
                 <td>2023-03-20</td>
                 <td>4:00 PM</td>
-                <td class="d-flex justify-content-between">5:00 PM <i class="fa fa-ellipsis-h element-option"></i></td>
+                <td class="d-flex justify-content-between position-relative ultimo-elemento-3">
+                  5:00 PM
+                  <i class="fa fa-ellipsis-h element-option ml-3" onclick="MostrarMenuOpciones('ultimo-elemento-3')"></i>
+                </td>
               </tr>
               <tr>
                 <th scope="row">4</th>
@@ -197,13 +206,16 @@
                 <td>4D</td>
                 <td>2023-03-20</td>
                 <td>4:00 PM</td>
-                <td class="d-flex justify-content-between">3:00 PM <i class="fa fa-ellipsis-h element-option"></i></td>
+                <td class="d-flex justify-content-between position-relative ultimo-elemento-4">
+                  3:00 PM
+                  <i class="fa fa-ellipsis-h element-option ml-3" onclick="MostrarMenuOpciones('ultimo-elemento-4')"></i>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-
+      
       <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
@@ -313,6 +325,88 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Aceptar modal-->
+      <div class="modal fade" id="aceptar-modal" tabindex="-1" role="dialog" aria-labelledby="aceptarModalCenterTitle"
+           aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="aceptarModalLongTitle">Aceptar solicitud</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="Select">
+                <div class="Select-Lab">
+                  <h6>¿Está seguro de aceptar esta solicitud?</h6>
+                  <div class="mt-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--Rechazar modal-->
+      <div class="modal fade" id="rechazar-modal" tabindex="-1" role="dialog" aria-labelledby="rechazarModalCenterTitle"
+           aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="rechazarModalLongTitle">Rechazar solicitud</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="Select">
+                <div class="Select-Lab">
+                  <h6>¿Está seguro de rechazar esta solicitud?</h6>
+                  <div class="mt-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Rechazar</button>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Cancelar modal-->
+      <div class="modal fade" id="cancelar-modal" tabindex="-1" role="dialog" aria-labelledby="cancelarModalCenterTitle"
+           aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cancelarModalLongTitle">Cancelar solicitud</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="Select">
+                <div class="Select-Lab">
+                  <h6>¿Está seguro de cancelar esta solicitud?</h6>
+                  <div class="mt-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+              <br>
             </div>
           </div>
         </div>
