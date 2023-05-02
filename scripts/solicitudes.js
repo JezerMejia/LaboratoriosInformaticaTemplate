@@ -28,6 +28,77 @@ $(document).ready(function () {
     });
 });
 
+function CambiarBotonActivo(botonClass){
+    const boton = document.querySelector(`.${botonClass}`)
+    boton.classList.toggle('btn-activo')
+
+    if (botonClass === 'all'){
+        const botonAceptados = document.querySelector('.accept')
+        botonAceptados.classList.remove('btn-activo')
+    }else{
+        const botonTodo = document.querySelector('.all')
+        botonTodo.classList.remove('btn-activo')
+    }
+}
+
+document.addEventListener('click', function (event){
+    if (!event.target.classList.contains('element-option') && !event.target.classList.contains('menu-container')){
+        ocultarMenuOpciones()
+    }
+})
+
+function ocultarMenuOpciones(){
+    const MenusOpciones = document.querySelectorAll('.menu-container')
+
+    MenusOpciones.forEach((menu) => {
+        menu.style.display = 'none';
+    })
+}
+function MostrarMenuOpciones(claseContenedor){
+    const contenedor = document.querySelector(`.${claseContenedor}`)
+
+    //Busca dentro si dentro del contenedor padre hay un elemento con la clase menu-container
+    const MenusExistente = contenedor.querySelector('.menu-container')
+    console.log(MenusExistente)
+
+    if (MenusExistente !== null){
+        ocultarMenuOpciones()
+        MenusExistente.style.display = 'block'
+    }else{
+        ocultarMenuOpciones()
+        const menuContainer = document.createElement("div")
+        menuContainer.className = "menu-container w-75 position-absolute"
+
+        const card = document.createElement("div")
+        card.className = "card border-0 rounded-xl shadow d-flex align-items-center"
+
+        const cancel = document.createElement("button")
+        cancel.className = "w-100 text-center mt-1 mb-0 py-1 border-0 bg-white"
+        cancel.innerText = "Cancelar"
+        cancel.dataset.toggle = "modal"
+        cancel.dataset.target = "#cancelar-modal"
+
+        const approve = document.createElement("button")
+        approve.className = "w-100 text-center py-1 m-0 border-0 bg-white"
+        approve.innerText = "Aceptar"
+        approve.dataset.toggle = "modal"
+        approve.dataset.target = "#aceptar-modal"
+
+        const reject = document.createElement("button")
+        reject.className = "w-100 text-center py-1 m-0 mb-1 border-0 bg-white"
+        reject.innerText = "Rechazar"
+        reject.dataset.toggle = "modal"
+        reject.dataset.target = "#rechazar-modal"
+
+        card.appendChild(cancel)
+        card.appendChild(approve)
+        card.appendChild(reject)
+
+        menuContainer.appendChild(card)
+
+        contenedor.appendChild(menuContainer)
+    }
+}
 
 $(function () {
     $('#datepicker').datepicker({
