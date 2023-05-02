@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://rsms.me/" />
+
+    <!--datepicker implementation-->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="/laboratorio.css" />
+    <script src="https://kit.fontawesome.com/a68fa4bab1.js" crossorigin="anonymous"></script>
+
+    <title>Laboratorios de Informática</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav
+            class="navbar sidebar bg-institucional flex-column flex-nowrap align-items-start align-items-sm-center justify-content-start">
+            <div class="d-flex flex-row justify-content-between justify-content-sm-center align-items-center w-100">
+                <a class="brand" href="/">
+                    <img src="/assets/UCA-Logo.svg" alt="" />
+                </a>
+                <button id="sidebar-inner-toggler" class="btn btn-light d-block d-sm-none" type="button"
+                    data-toggle="collapse" data-target="#sidebar-content" aria-controls="sidebar-content"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars fa-xl"></i>
+                </button>
+            </div>
+
+            <button id="sidebar-toggler" class="d-none d-sm-block visible">
+                <i class="fa-solid fa-caret-right fa-xl"></i>
+            </button>
+
+            <div class="collapse navbar-collapse w-100" id="sidebar-content">
+                <div
+                    class="nav-container d-flex flex-column w-100 h-100 justify-content-start justify-content-sm-between">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">
+                                <i class="fa-solid fa-table-cells-large fa-lg"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/solicitudes.html">
+                                <i class="fa-solid fa-inbox fa-lg"></i>
+                                Solicitudes
+                            </a>
+                        </li>
+                        <hr />
+                        <li class="nav-item">
+                            <a class="nav-link" href="/laboratorio.html">
+                                <i class="fa-solid fa-desktop fa-lg"></i>
+                                Laboratorios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/usuarios.html">
+                                <i class="fa-solid fa-user fa-lg"></i>
+                                Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/informes.html">
+                                <i class="fa-solid fa-file-lines fa-lg"></i>
+                                Informes
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ajustes.html">
+                                <i class="fa-solid fa-gear fa-lg"></i>
+                                Ajustes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link account-link" href="/perfil.html">
+                                <img src="/assets/chad.png" class="account-img" alt="Chad" />
+                                <div class="account-details">
+                                    <span class="account-name">Yamil Guzmán</span>
+                                    <span class="account-role">Coordinador</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="overflow-auto w-100">
+            <main class="container p-5 h-100">
+                <h2>Modals Lab y Software</h2>
+                <button type="button" class="btn btn-danger" data-toggle="modal"
+                    data-target="#ModalDeleteLab">Eliminar</button>
+                <button type="button" id="add-button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#ModalAddSoftware">Añadir
+                    Software</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#ModalEditSoftware">Editar
+                    Software</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal"
+                    data-target="#ModalDeleteSoftware">Eliminar
+                    Software</button>
+            </main>
+        </div>
+
+        <!--Modal Eliminar Lab-->
+        <div class="modal fade" tabindex="-1" id="ModalDeleteLab">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content rounded-xl">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Eliminar Laboratorio</h5>
+                    </div>
+                    <div class="modal-body">
+                        <h6>¿Estás seguro/a de eliminar este laboratorio? Se eliminará permanentemente.</h6>
+                        <p>Ten en cuenta que las computadoras asociadas a este laboratorio también serán eliminadas.</p>
+                        <p>Se recomienda inhabilitar el laboratorio en vez de eliminarlo.</p>
+                    </div>
+                    <div class="modal-footer justify-content-start">
+                        <button type="button" class="btn btn-danger px-5">Eliminar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal Eliminar Lab-->
+
+        <!--Modal Añadir Software-->
+        <div class="modal fade" tabindex="-1" id="ModalAddSoftware">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content rounded-xl">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Añadir Software</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <h6>Nombre</h6>
+                                <input class="form-control py-1 border shadow-none" type="text" placeholder="Neovim">
+                                <h6>Categoría</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">Programación</option>
+                                    <option value="2">Modelado</option>
+                                    <option value="3">Diseño</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <div id="input-fileAdd">
+                                    <div id="preview-containerAdd">
+                                        <img id="img-previewAdd">
+                                        <label for="input-imagenAdd" class="custom-file-uploadAdd">
+                                            Añadir imagen
+                                        </label>
+                                        <input id="input-imagenAdd" type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-start">
+                        <button type="button" class="btn btn-primary px-5">Añadir</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal Añadir Software-->
+
+        <!--Modal Editar Software-->
+        <div class="modal fade" tabindex="-1" id="ModalEditSoftware">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content rounded-xl">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar Software</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <h6>Nombre</h6>
+                                <input class="form-control py-1 border shadow-none" type="text" placeholder="Neovim">
+                                <h6>Categoría</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="1">Programación</option>
+                                    <option value="2">Modelado</option>
+                                    <option value="3">Diseño</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <div id="input-fileEdit">
+                                    <div id="preview-containerEdit">
+                                        <img id="img-previewEdit">
+                                        <label for="input-imagenEdit" class="custom-file-uploadEdit">
+                                            Añadir imagen
+                                        </label>
+                                        <input id="input-imagenEdit" type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-start">
+                            <button type="button" class="btn btn-primary px-5">Actualizar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal Editar Software-->
+
+        <!--Modal Eliminar Software-->
+        <div class="modal fade" tabindex="-1" id="ModalDeleteSoftware">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content rounded-xl">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Eliminar Software</h5>
+                    </div>
+                    <div class="modal-body">
+                        <h6>¿Estás seguro/a de eliminar este Software? Se eliminará permanentemente.</h6>
+                        <div class="modal-footer justify-content-start">
+                            <button type="button" class="btn btn-danger px-5">Eliminar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal Eliminar Software-->
+
+        <script src="/scripts/laboratorio.js"></script>
+</body>
+
+</html>

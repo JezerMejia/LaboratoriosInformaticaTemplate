@@ -187,3 +187,30 @@ downButtonFL.addEventListener("click", () => {
 
 /* TimePicker 2 */
 
+/* Vista previa de imagen */
+
+ // Esperamos a que se cargue el documento
+ $(document).ready(function() {
+  // Escuchamos el evento change del input file
+  $("#input-imagenAdd, #input-imagenEdit").change(function() {
+    // Creamos un objeto FileReader para leer el archivo seleccionado
+    var reader = new FileReader();
+    // Escuchamos el evento load del FileReader
+    reader.onload = function() {
+      // Asignamos la imagen cargada al src del elemento img
+      $("#img-previewAdd, #img-previewEdit").attr("src", reader.result);
+      // Ocultamos el label
+      $(".custom-file-uploadAdd").show();
+      $(".custom-file-uploadEdit").show();
+    };
+    // Leemos el archivo seleccionado como URL de datos
+    reader.readAsDataURL(this.files[0]);
+  });
+});
+
+$(document).ready(function() {
+  $('#ModalAddSoftware').on('show.bs.modal', function() {
+    $('#img-previewAdd').attr('src', '');
+    $(".custom-file-uploadAdd, .custom-file-uploadEdit").show();
+  });
+});
