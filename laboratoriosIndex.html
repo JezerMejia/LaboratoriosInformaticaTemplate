@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="/laboratorioIndex.css" />
+  <script src="https://kit.fontawesome.com/a68fa4bab1.js" crossorigin="anonymous"></script>
+
+  <!--SearchBar links-->
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+
+  <!-- Include DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Include DataTables JavaScript -->
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+  <!--Date Picker Bootstrap-->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+  </script>
+
+  <!--Timepicker-->
+  <!-- Tempus Dominus CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
+
+  <title>Laboratorios de Informática</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav
+      class="navbar sidebar bg-institucional flex-column flex-nowrap align-items-start align-items-sm-center justify-content-start">
+      <div class="d-flex flex-row justify-content-between justify-content-sm-center w-100">
+        <div class="brand">
+          <img src="/assets/UCA-Logo.svg" alt="" />
+        </div>
+        <button id="sidebar-inner-toggler" class="btn btn-light d-block d-sm-none" type="button" data-toggle="collapse"
+          data-target="#sidebar-content" aria-controls="sidebar-content" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars fa-xl"></i>
+        </button>
+      </div>
+
+      <button id="sidebar-toggler" class="d-none d-sm-block">
+        <i class="fa-solid fa-caret-right fa-xl"></i>
+      </button>
+
+      <div class="collapse navbar-collapse w-100" id="sidebar-content">
+        <div class="nav-container d-flex flex-column w-100 h-100 justify-content-start justify-content-sm-between">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="fa-solid fa-table-cells-large fa-lg"></i>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/solicitudes.html">
+                <i class="fa-solid fa-inbox fa-lg"></i>
+                Solicitudes
+              </a>
+            </li>
+            <hr />
+            <li class="nav-item">
+              <a class="nav-link active" href="/laboratoriosIndex.html">
+                <i class="fa-solid fa-desktop fa-lg"></i>
+                Laboratorios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/usuarios">
+                <i class="fa-solid fa-user fa-lg"></i>
+                Usuarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/informes">
+                <i class="fa-solid fa-file-lines fa-lg"></i>
+                Informes
+              </a>
+            </li>
+          </ul>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="/ajustes">
+                <i class="fa-solid fa-gear fa-lg"></i>
+                Ajustes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link account-link" href="/cuenta">
+                <img src="/assets/chad.png" class="account-img" alt="Chad" />
+                <div class="account-details">
+                  <span class="account-name">Yamil Guzmán</span>
+                  <span class="account-role">Coordinador</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container p-4">
+      <div class="nav-top">
+        <div class="nav-item">
+          <h3 class="lab" data-filter="lab">Laboratorios</h3>
+        </div>
+        <div class="nav-item">
+          <button type="button" class="add" data-toggle="modal" data-target="#myModal">
+            <i class="fa-solid fa-circle-plus"></i> Añadir Laboratorio
+          </button>
+          <div class="input-group">
+            <span class="input-group-prepend">
+              <div class="input-group-text bg-transparent border-right-0"><i class="fa fa-search"></i></div>
+            </span>
+            <input id="myInput" class="form-control py-2 border-left-0 shadow-none" type="search"
+              placeholder="Buscar...">
+          </div>
+        </div>
+      </div>
+
+      <a href="laboratorio.html">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="card border-0 rounded-xl shadow p-3 align-items-center">
+              <div class="grid-container-laba">
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop" style="color: #ff0000"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="computer-container-laba">
+                  <i class="fas fa-desktop"></i>
+                </div>
+              </div>
+      </a>
+      <h6 class="card-lab">Laboratorio A</h6>
+      <span class="cant-computer">18 Computadoras</span>
+      <span class="status"><i class="fa-sharp fa-solid fa-circle me-1" style="color: #009877; padding: 5px;">
+        </i>Activo</span>
+      </div>
+  <a href="laboratorio.html">
+    <div class="card border-0 rounded-xl shadow p-3 align-items-center ">
+      <div class="grid-container-labb">
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop" style="color: #ff0000"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labb">
+          <i class="fas fa-desktop"></i>
+        </div>
+      </div>
+  </a>
+  <h6 class="card-lab">Laboratorio B</h6>
+  <span class="cant-computer">10 Computadoras</span>
+    <span class="status"><i class="fa-sharp fa-solid fa-circle me-1" style="color: #009877; padding: 5px;">
+      </i>Activo</span>
+  </div>
+  <a href="laboratorio.html">
+    <div class="card border-0 rounded-xl shadow p-3 align-items-center">
+      <div class="grid-container-labc">
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="computer-container-labc">
+          <i class="fas fa-desktop"></i>
+        </div>
+      </div>
+  </a>
+  <h6 class="card-lab">Laboratorio C</h6>
+  <span class="cant-computer">16 Computadoras</span>
+    <span class="status"><i class="fa-sharp fa-solid fa-circle me-1" style="color: #ff0000; padding: 5px; ">
+      </i>Inactivo</span>
+  </div>
+  <!--Container y Row-->
+  </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Añadir Laboratorio</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="Name">
+            <div class="input-container">
+              <h6>Nombre</h6>
+              <input class="form-control py-1 border shadow-none" type="text" placeholder="Laboratorio A">
+            </div>
+          </div>
+          <br>
+          <div class="input-container">
+            <h6>Dimensiones</h6>
+            <input type="text" class="input" placeholder="Filas" style="display: inline-block;"> X
+            <input type=" text" class="input" placeholder="Columnas" style="display: inline-block;">
+          </div>
+          <br>
+
+          <div class=" text-top-laboratorio">
+            <h6 class="top-text-inicio">Esto define el tamaño del diagrama de computadoras.</h6>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary px-5">Añadir</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="scripts/laboratorio.js"></script>
+</body>
+
+</html>
