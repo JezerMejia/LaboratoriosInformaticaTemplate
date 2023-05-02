@@ -34,10 +34,10 @@ function CambiarBotonActivo(botonClass){
 
     if (botonClass === 'all'){
         const botonAceptados = document.querySelector('.accept')
-        botonAceptados.classList.toggle('btn-activo')
+        botonAceptados.classList.remove('btn-activo')
     }else{
         const botonTodo = document.querySelector('.all')
-        botonTodo.classList.toggle('btn-activo')
+        botonTodo.classList.remove('btn-activo')
     }
 }
 
