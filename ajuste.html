@@ -119,53 +119,79 @@
       <div class="overflow-auto w-100">
         <main class="container p-5 h-100">
           <h2>Ajustes del sistema</h2>
-          <p class="font-weight-bold">Ajustes de prestamo</p>
-          <label for="dias-anticipacion">Dias de anticipacion de prestamo</label>
+          <p class="font-weight-bold mr-2 ">Ajustes de préstamo</p>
+          <label for="dias-anticipacion ">Días de anticipación de préstamo</label>
           <div class="input-container"> 
           <input class="form-control py-2 border shadow-none" type="text" placeholder="5" id="dias-anticipacion">
           </div>
-          <p class="ExplicacionDeAjuste my-2">Cuantos dias antes puede un estudiante para solicitar un prestamo.</p>
-          
-          <label for="Timepo-MX-R-Diarias" class="my-2">Tiempo maximo de reservaciones diarias</label>
+          <p class="ExplicacionDeAjuste my-2">Cuántos días antes puede un estudiante para solicitar un préstamo.</p>
+          <!--div de tiempo maximo de reservacion --><div>
+            <label for="Timepo-MX-R-Diarias" class="my-2">Tiempo máximo de reservaciones diarias</label>
           <div class="input-container">
             <input type="text" placeholder="4 horas" class="form-control dropdown-toggle border" id="Timepo-MX-R-Diarias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
-
             <div class="dropdown-menu" aria-labelledby="editableSelect">
                 <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '2')">2 horas</a>
                 <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '3')">3 horas</a>
                 <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '4')">4 horas</a>
             </div>
-
         </div>
-            <p class="ExplicacionDeAjuste my-2">El tiempo maximo que un Estudiante puede solcitar un dia. </p>
-             
-            <label for="Timepo-R-Diarias" class="my-2">Total de reservaciones diarias</label>
+          </div>
+          
+        <p class="ExplicacionDeAjuste my-2">El tiempo máximo que un estudiante puede solicitar en un dia.</p>
+            
+            <!--div de tiempo maximo de reservacion -->
+            <div>
+              <label for="Timepo-MX-Reservacion" class="my-2">Tiempo máximo por reservación </label>
+            <div class="input-container">
+              <input type="text" placeholder="2 horas" class="form-control dropdown-toggle border" id="Timepo-MX-Reservacion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+  
+              <div class="dropdown-menu" aria-labelledby="editableSelect">
+                  <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '2')">2 horas</a>
+                  <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '3')">3 horas</a>
+                  <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '4')">4 horas</a>
+              </div>
+            </div>
+            </div>
+            
+
+            <p class="ExplicacionDeAjuste my-2">El tiempo máximo que un estudiante puede solicitar por reservación.</p>
+
+            <!--div de total de reservaciones -->
+            <div>
+              <label for="Timepo-R-Diarias" class="my-2">Total de reservaciones diarias</label>
           <div class="input-container">
             <input type="text" placeholder="4 reservaciones" class="form-control dropdown-toggle border" id="Timepo-R-Diarias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
-
             <div class="dropdown-menu" aria-labelledby="editableSelect">
                 <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '2')">2 reservaciones</a>
                 <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '3')">3 reservaciones</a>
                 <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '4')">4 reservaciones</a>
             </div>
-
-        </div>
-            <p class="ExplicacionDeAjuste my-2">La cantidad maxima de solucitudes que un Estudiante puede realizar.</p>
-             
-            <p class="font-weight-bold my-4">Ajustes de acceso</p>
-
-           <div class="d-flex justify-content-between col-6 p-0" >
-            <div class="input-container">
-              <p>Hora de apertura de Laboratorio</p>
-              <input type="time" class="border form-control rounded shadow-none" value="2023-03-23">
           </div>
+            </div>
+            
 
-          <div class="input-container">
-              <p>Hora de cierre de Laboratorio</p>
-            <input type="time" class="border form-control rounded shadow-none" value="2023-03-23">
-        </div>
+            <p class="ExplicacionDeAjuste my-2">La cantidad máxima de solicitudes que un estudiante puede realizar.</p>
+             
+            <p class="font-weight-bold mr-3">Ajustes de acceso</p>
+           
+            <!--div de horario laboratorios -->
+           <div class="d-flex flex-row flex-wrap">
+
+            
+              <div class="input-container mr-3 hora-container">
+                <p >Hora de apertura de laboratorio</p>
+                <input type="time" class="border form-control rounded shadow-none" value="2023-03-23">
+              </div>
+            
+              <div class="input-container hora-container mt-2 mt-sm-0">
+                <p >Hora de cierre de laboratorio</p>
+                <input type="time" class="border form-control rounded shadow-none" value="2023-03-23">
+              </div>
+            
+
            </div>
           
+          <!--div de fecha de apertura -->
           <div>
             <label for="Fecha-Apertura-Sistema" class="my-2">Fecha de apertura de sistema</label>
             <div class="input-container">
@@ -173,14 +199,16 @@
           </div>
           <p class="ExplicacionDeAjuste my-2">La fecha en que se permitirá el acceso al Sistema para los Estudiantes.</p>
           </div>
+          <!--div de fecha de cierre -->
           <div>
             <label for="Fecha-cierre-Sistema" class="my-2">Fecha de cierre de sistema</label>
             <div class="input-container">
               <input type="date" class="border form-control rounded shadow-none" value="2023-03-23" id="Fecha-Cierre-Sistema">
           </div>
-          <p class="ExplicacionDeAjuste my-2">La fecha en que el Sistema se cerrará para los Estudiantes.</p>
+          <p class="ExplicacionDeAjuste my-2">La fecha en que el sistema se cerrará para los Estudiantes.</p>
           </div>
-
+          
+          <!--div del boton-->
           <div class="my-5">
             <button 
               type="button"

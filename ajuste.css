@@ -1,11 +1,26 @@
-.input-container{
-width: 150px;
+.input-container {
+  margin-right: 20px;
+  width: 150px;
+  margin-left: 12px;
+}
+  label{
+      min-width: 150px;
+      max-width: 500px;
+      margin-left: 15px;
+  }
+  .ExplicacionDeAjuste{
+      color: #939196 !important;
+      margin-left: 15px;
+  }
+  .containers {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+  .hora-container {
+    min-width: 250px;
    
-}
-label{
-    min-width: 150px;
-    max-width: 500px;
-}
-.ExplicacionDeAjuste{
-    color: #939196 !important;
-}
+  }
+  
