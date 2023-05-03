@@ -130,10 +130,10 @@
                 <div class="nav-item">
                 </div>
                 <div class="nav-item flex-sm-nowrap flex-wrap flex-sm-row flex-column-reverse w-sm-max-content w-100">
-                    <button type="button" class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#ModalF">
+                    <button type="button" class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#ModalAgregarF">
                         <i class="fa-solid fa-circle-plus"></i> Añadir Facultad
                     </button>
-                    <button type="button" class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#ModalC">
+                    <button type="button" class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#ModalAgregarC">
                         <i class="fa-solid fa-circle-plus"></i> Añadir Carrera
                     </button>
                     <div class="input-group">
@@ -163,11 +163,11 @@
                                         <i class="fa fa-ellipsis-h element-option"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <button class="dropdown-item" data-toggle="modal" data-target="#editarFacultad">
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#ModalEditarFacultad">
                                             Editar
                                         </button>
                                         <button class="dropdown-item" data-toggle="modal"
-                                            data-target="#eliminarFacultad">
+                                            data-target="#ModalEliminarFacultad">
                                             Eliminar
                                         </button>
                                     </div>
@@ -194,11 +194,11 @@
                                         </button>
                                         <div class="dropdown-menu">
                                             <button class="dropdown-item" data-toggle="modal"
-                                                data-target="#editarCarrera">
+                                                data-target="#ModalEditarCarrera">
                                                 Editar
                                             </button>
                                             <button class="dropdown-item" data-toggle="modal"
-                                                data-target="#eliminarCarrera">
+                                                data-target="#ModalEliminarCarrera">
                                                 Eliminar
                                             </button>
                                         </div>
@@ -223,11 +223,11 @@
                                         </button>
                                         <div class="dropdown-menu">
                                             <button class="dropdown-item" data-toggle="modal"
-                                                data-target="#editarCarrera">
+                                                data-target="#ModalEditarCarrera">
                                                 Editar
                                             </button>
                                             <button class="dropdown-item" data-toggle="modal"
-                                                data-target="#eliminarCarrera">
+                                                data-target="#ModalEliminarCarrera">
                                                 Eliminar
                                             </button>
                                         </div>
@@ -251,11 +251,11 @@
                                         </button>
                                         <div class="dropdown-menu">
                                             <button class="dropdown-item" data-toggle="modal"
-                                                data-target="#editarCarrera">
+                                                data-target="#ModalEditarCarrera">
                                                 Editar
                                             </button>
                                             <button class="dropdown-item" data-toggle="modal"
-                                                data-target="#eliminarCarrera">
+                                                data-target="#ModalEliminarCarrera">
                                                 Eliminar
                                             </button>
                                         </div>
@@ -271,10 +271,9 @@
                     <div class="card-header" id="headingTwo">
                         <h2 class="mb-0">
                             <div class="d-flex flex-row justify-content-between w-100">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-                                    Facultad de Ciencias Economicas y Empresariales.
+                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    Facultad de Cienciad Economicas y Empresariales
                                 </button>
                                 <div class="dropdown">
                                     <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle"
@@ -282,11 +281,11 @@
                                         <i class="fa fa-ellipsis-h element-option"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <button class="dropdown-item" data-toggle="modal" data-target="#editarFacultad">
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#ModalEditarFacultad">
                                             Editar
                                         </button>
                                         <button class="dropdown-item" data-toggle="modal"
-                                            data-target="#eliminarFacultad">
+                                            data-target="#ModalEliminarFacultad">
                                             Eliminar
                                         </button>
                                     </div>
@@ -296,44 +295,208 @@
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                            Administración de Empresas.
+                            <div class="d-flex flex-row justify-content-between w-100">
+                                <span>
+                                    Administracion de Empresas.
+                                </span>
+                                <div class="d-flex flex-row gap-5">
+                                    <span>
+                                        15 estudiantes
+                                    </span>
+                                    <div class="dropdown">
+                                        <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle"
+                                            data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h element-option"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEditarCarrera">
+                                                Editar
+                                            </button>
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEliminarCarrera">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                         <div class="card-body">
-                            Contabilidad.
+                            <div class="d-flex flex-row justify-content-between w-100">
+                                <span>
+                                    Marketing.
+                                </span>
+                                <div class="d-flex flex-row gap-5">
+                                    <span>
+                                        20 estudiantes
+                                    </span>
+                                    <div class="dropdown">
+                                        <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle"
+                                            data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h element-option"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEditarCarrera">
+                                                Editar
+                                            </button>
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEliminarCarrera">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
-                            Marketing.
-                        </div>
+                            <div class="d-flex flex-row justify-content-between w-100">
+                                <span>
+                                    Contabilidad.
+                                </span>
+                                <div class="d-flex flex-row gap-5">
+                                    <span>
+                                        100 estudiantes
+                                    </span>
+                                    <div class="dropdown">
+                                        <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle" 
+                                            data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h element-option"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEditarCarrera">
+                                                Editar
+                                            </button>
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEliminarCarrera">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                aria-controls="collapseThree">
-                                Facultad de Humanidades
-                            </button>
+                            <div class="d-flex flex-row justify-content-between w-100">
+                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    Facultad de Ciencias Juridicas
+                                </button>
+                                <div class="dropdown">
+                                    <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle"
+                                        data-toggle="dropdown">
+                                        <i class="fa fa-ellipsis-h element-option"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#ModalEditarFacultad">
+                                            Editar
+                                        </button>
+                                        <button class="dropdown-item" data-toggle="modal"
+                                            data-target="#ModalEliminarFacultad">
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </h2>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                        data-parent="#accordionExample">
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
-                            Psicologia
+                            <div class="d-flex flex-row justify-content-between w-100">
+                                <span>
+                                    Derecho.
+                                </span>
+                                <div class="d-flex flex-row gap-5">
+                                    <span>
+                                        15 estudiantes
+                                    </span>
+                                    <div class="dropdown">
+                                        <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle"
+                                            data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h element-option"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEditarCarrera">
+                                                Editar
+                                            </button>
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEliminarCarrera">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="d-flex flex-row justify-content-between w-100">
+                                <span>
+                                    Filosofia.
+                                </span>
+                                <div class="d-flex flex-row gap-5">
+                                    <span>
+                                        20 estudiantes
+                                    </span>
+                                    <div class="dropdown">
+                                        <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle"
+                                            data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h element-option"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEditarCarrera">
+                                                Editar
+                                            </button>
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEliminarCarrera">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
-                            Sociologia.
-                        </div>
-                        <div class="card-body">
-                            Derecho.
-                        </div>
+                            <div class="d-flex flex-row justify-content-between w-100">
+                                <span>
+                                    Psicologia.
+                                </span>
+                                <div class="d-flex flex-row gap-5">
+                                    <span>
+                                        100 estudiantes
+                                    </span>
+                                    <div class="dropdown">
+                                        <button class="btn-icon d-flex align-items-center px-2 py-1 dropdown-toggle" 
+                                            data-toggle="dropdown">
+                                            <i class="fa fa-ellipsis-h element-option"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEditarCarrera">
+                                                Editar
+                                            </button>
+                                            <button class="dropdown-item" data-toggle="modal"
+                                                data-target="#ModalEliminarCarrera">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
-            </div>
 
-
-            <!-- Modal -->
-            <div class="modal fade" id="ModalF" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            <!-- Modal Agregar Facultad -->
+            <div class="modal fade" id="ModalAgregarF" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -361,8 +524,10 @@
 
                 </div>
             </div>
+
             <!-- Modal de editar Facultad -->
-            <div class="modal fade" id="editarFacultad" tabindex="-1" role="dialog"
+
+            <div class="modal fade" id="ModalEditarFacultad" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -388,7 +553,36 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="ModalC" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+
+            <!-- Modal para eliminar una Facultad -->
+
+            <div class="modal fade" tabindex="-1" id="ModalEliminarFacultad">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                    <div class="modal-content rounded-xl">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Eliminar Facultad</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p> ¿Estás seguro/a de eliminar esta facultad? 
+                                Tambien se eliminaran las carreras asociada a esta. </p>
+                            <p>Esta acción no se puede deshacer.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger px-5">
+                                Eliminar
+                            </button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal Agregar Carrera -->
+
+            <div class="modal fade" id="ModalAgregarC" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -427,15 +621,56 @@
                 </div>
             </div>
 
+             <!-- Modal Editar Carrera -->
+
+             <div class="modal fade" id="ModalEditarCarrera" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Editar Carrera</h5>
+                        </div>
+                        <div class="modal-body">
+                            <h6></h6>
+
+                            <div class="Select">
+                                <div class="Select-Name">
+                                    <h9>Nombre*</h9>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Carrera">
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="Select">
+                                <div class="Select-Name">
+                                    <h9>Facultad*</h9>
+                                    <select class="selectpicker border rounded form-control shadow-none pl-1">
+                                        <option>Laboratorio A</option>
+                                        <option>Laboratorio B</option>
+                                        <option>Laboratorio C</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Editar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Modal para eliminar una incidencia -->
-            <div class="modal fade" tabindex="-1" id="eliminarFacultad">
+            <div class="modal fade" tabindex="-1" id="ModalEliminarCarrera">
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
                     <div class="modal-content rounded-xl">
                         <div class="modal-header">
-                            <h5 class="modal-title">Eliminar Facultad</h5>
+                            <h5 class="modal-title">Eliminar carrera</h5>
                         </div>
                         <div class="modal-body">
-                            <p>¿Estás seguro/a de eliminar esta facultad?</p>
+                            <p>¿Estás seguro/a de eliminar esta carrera?</p>
                             <p>Esta acción no se puede deshacer.</p>
                         </div>
                         <div class="modal-footer">
