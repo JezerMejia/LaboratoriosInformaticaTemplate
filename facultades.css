@@ -240,10 +240,27 @@ html, body {
     padding: 5px;
     border-radius: 6px;
   }
-  
-  
 
-  
+.btn-icon {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+}
+
+.gap-1 {
+    gap: 0.25rem;
+  }
+  .gap-2 {
+    gap: 0.5rem;
+  }
+  .gap-3 {
+    gap: 1rem;
+  }
+  .gap-4 {
+    gap: 1.5rem;
+  }
+  .gap-5 {
+    gap: 3rem;
   }
 
   .btn-time-picker-inicio{
