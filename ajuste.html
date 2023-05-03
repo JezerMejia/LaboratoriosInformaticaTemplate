@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="/index.css" />
+    <script
+      src="https://kit.fontawesome.com/a68fa4bab1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./ajuste.css">
+    <title>Laboratorios de Informática</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav
+        class="navbar sidebar bg-institucional flex-column flex-nowrap align-items-start align-items-sm-center justify-content-start"
+      >
+        <div
+          class="d-flex flex-row justify-content-between justify-content-sm-center align-items-center w-100"
+        >
+          <a class="brand" href="/">
+            <img src="/assets/UCA-Logo.svg" alt="" />
+          </a>
+          <button
+            id="sidebar-inner-toggler"
+            class="btn btn-light d-block d-sm-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#sidebar-content"
+            aria-controls="sidebar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars fa-xl"></i>
+          </button>
+        </div>
+
+        <button id="sidebar-toggler" class="d-none d-sm-block visible">
+          <i class="fa-solid fa-caret-right fa-xl"></i>
+        </button>
+
+        <div class="collapse navbar-collapse w-100" id="sidebar-content">
+          <div
+            class="nav-container d-flex flex-column w-100 h-100 justify-content-start justify-content-sm-between"
+          >
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">
+                  <i class="fa-solid fa-table-cells-large fa-lg"></i>
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/solicitudes.html">
+                  <i class="fa-solid fa-inbox fa-lg"></i>
+                  Solicitudes
+                </a>
+              </li>
+              <hr />
+              <li class="nav-item">
+                <a class="nav-link" href="/laboratorios.html">
+                  <i class="fa-solid fa-desktop fa-lg"></i>
+                  Laboratorios
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/usuarios.html">
+                  <i class="fa-solid fa-user fa-lg"></i>
+                  Usuarios
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/informes.html">
+                  <i class="fa-solid fa-file-lines fa-lg"></i>
+                  Informes
+                </a>
+              </li>
+            </ul>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="/ajustes.html">
+                  <i class="fa-solid fa-gear fa-lg"></i>
+                  Ajustes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link account-link" href="/cuenta.html">
+                  <img src="/assets/chad.png" class="account-img" alt="Chad" />
+                  <div class="account-details">
+                    <span class="account-name">Yamil Guzmán</span>
+                    <span class="account-role">Coordinador</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="overflow-auto w-100">
+        <main class="container p-5 h-100">
+          <h2>Ajustes del sistema</h2>
+          <p class="font-weight-bold mr-2 ">Ajustes de préstamo</p>
+          <label for="dias-anticipacion ">Días de anticipación de préstamo</label>
+          <div class="input-container"> 
+          <input class="form-control py-2 border shadow-none" type="text" placeholder="5" id="dias-anticipacion">
+          </div>
+          <p class="ExplicacionDeAjuste my-2">Cuántos días antes puede un estudiante para solicitar un préstamo.</p>
+          <!--div de tiempo maximo de reservacion --><div>
+            <label for="Timepo-MX-R-Diarias" class="my-2">Tiempo máximo de reservaciones diarias</label>
+          <div class="input-container">
+            <input type="text" placeholder="4 horas" class="form-control dropdown-toggle border" id="Timepo-MX-R-Diarias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+            <div class="dropdown-menu" aria-labelledby="editableSelect">
+                <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '2')">2 horas</a>
+                <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '3')">3 horas</a>
+                <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '4')">4 horas</a>
+            </div>
+        </div>
+          </div>
+          
+        <p class="ExplicacionDeAjuste my-2">El tiempo máximo que un estudiante puede solicitar en un dia.</p>
+            
+            <!--div de tiempo maximo de reservacion -->
+            <div>
+              <label for="Timepo-MX-Reservacion" class="my-2">Tiempo máximo por reservación </label>
+            <div class="input-container">
+              <input type="text" placeholder="2 horas" class="form-control dropdown-toggle border" id="Timepo-MX-Reservacion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+  
+              <div class="dropdown-menu" aria-labelledby="editableSelect">
+                  <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '2')">2 horas</a>
+                  <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '3')">3 horas</a>
+                  <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '4')">4 horas</a>
+              </div>
+            </div>
+            </div>
+            
+
+            <p class="ExplicacionDeAjuste my-2">El tiempo máximo que un estudiante puede solicitar por reservación.</p>
+
+            <!--div de total de reservaciones -->
+            <div>
+              <label for="Timepo-R-Diarias" class="my-2">Total de reservaciones diarias</label>
+          <div class="input-container">
+            <input type="text" placeholder="4 reservaciones" class="form-control dropdown-toggle border" id="Timepo-R-Diarias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+            <div class="dropdown-menu" aria-labelledby="editableSelect">
+                <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '2')">2 reservaciones</a>
+                <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '3')">3 reservaciones</a>
+                <a class="dropdown-item" href="#" onclick="setCategory('editableSelect', '4')">4 reservaciones</a>
+            </div>
+          </div>
+            </div>
+            
+
+            <p class="ExplicacionDeAjuste my-2">La cantidad máxima de solicitudes que un estudiante puede realizar.</p>
+             
+            <p class="font-weight-bold mr-3">Ajustes de acceso</p>
+           
+            <!--div de horario laboratorios -->
+           <div class="d-flex flex-row flex-wrap">
+
+            
+              <div class="input-container mr-3 hora-container">
+                <p >Hora de apertura de laboratorio</p>
+                <input type="time" class="border form-control rounded shadow-none" value="2023-03-23">
+              </div>
+            
+              <div class="input-container hora-container mt-2 mt-sm-0">
+                <p >Hora de cierre de laboratorio</p>
+                <input type="time" class="border form-control rounded shadow-none" value="2023-03-23">
+              </div>
+            
+
+           </div>
+          
+          <!--div de fecha de apertura -->
+          <div>
+            <label for="Fecha-Apertura-Sistema" class="my-2">Fecha de apertura de sistema</label>
+            <div class="input-container">
+              <input type="date" class="border form-control rounded shadow-none" value="2023-03-23" id="Fecha-Apertura-Sistema">
+          </div>
+          <p class="ExplicacionDeAjuste my-2">La fecha en que se permitirá el acceso al Sistema para los Estudiantes.</p>
+          </div>
+          <!--div de fecha de cierre -->
+          <div>
+            <label for="Fecha-cierre-Sistema" class="my-2">Fecha de cierre de sistema</label>
+            <div class="input-container">
+              <input type="date" class="border form-control rounded shadow-none" value="2023-03-23" id="Fecha-Cierre-Sistema">
+          </div>
+          <p class="ExplicacionDeAjuste my-2">La fecha en que el sistema se cerrará para los Estudiantes.</p>
+          </div>
+          
+          <!--div del boton-->
+          <div class="my-5">
+            <button 
+              type="button"
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#exampleModal">Guardar cambios</button>
+          </div>
+
+
+        </main>
+      </div>
+    </div>
+
+    <script src="./scripts/index.js" type="text/javascript"></script>
+  </body>
+</html>
