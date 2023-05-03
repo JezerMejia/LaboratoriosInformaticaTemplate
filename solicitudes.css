@@ -167,6 +167,12 @@ body {
 
 }
 
+@media (min-width: 576px) {
+  .w-sm-max-content {
+    width: max-content!important;
+  }
+}
+
 @media (min-width: 1600px) {
     .sidebar {
         width: 380px;
